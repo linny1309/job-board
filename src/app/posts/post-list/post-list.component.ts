@@ -21,11 +21,15 @@ export class PostListComponent {
 
     if (acc.style.display == "block") {
       acc.style.display = "none";
-      document.getElementById("accIcon"+i).innerHTML = "expand_less";
+      document.getElementById("accIcon"+i).innerHTML = "expand_more";
     } else {
       acc.style.display = "block";
-      document.getElementById("accIcon"+i).innerHTML = "expand_more";
+      document.getElementById("accIcon"+i).innerHTML = "expand_less";
     }
+  }
+
+  onDelete(postId: string) {
+    this.postsService.deletePost(postId);
   }
 
   ngOnInit() {

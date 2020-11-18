@@ -2,10 +2,10 @@
       <div *ngFor="let post of post; index as i; first as isFirst" class="post-container">
         <div>
           <div class="post-list">
-            <div class="accordion" id="acc{{i}}" (click)="onToggleAccordion(i)"><div class="title-div">{{post.firstName + " " + post.lastName}}</div>
-              <i class="material-icons" id="accIcon{{i}}">expand_more</i>
+            <div class="accordion" id="acc{{i}}"><div class="title-div">{{post.firstName + " " + post.lastName}}</div>
+              <i class="material-icons" id="accIcon{{i}}" (click)="onToggleAccordion(i)">expand_more</i>
               <i class="material-icons" id="editIcon">edit</i>
-              <i class="material-icons" id="deleteIcon">delete</i>
+              <i class="material-icons" id="deleteIcon" (click)="onDelete(post.id)">delete</i>
             </div>
           </div>
           <div class="post-list">

@@ -2,11 +2,25 @@
   overflow-x: none;
 }
 
+.page-title {
+  position: absolute;
+  top: 65px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: darkblue;
+}
+
 #page1 {
   visibility: hidden;
 }
 
 #page2 {
+  visibility: hidden;
+}
+
+#page3 {
   visibility: hidden;
 }
 

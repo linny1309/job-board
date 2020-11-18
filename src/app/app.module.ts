@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { JobsComponent } from './jobs/jobs.component';
     MenuComponent,
     RegistrationComponent,
     JobsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

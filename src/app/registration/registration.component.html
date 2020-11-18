@@ -1,17 +1,21 @@
 <div class="body">
   <app-header></app-header>
   <app-menu></app-menu>
-  <div class="page" id="page0">
+  <span class="page" id="page0">
+    <span class="page-title">Registration</span>
     <app-post-create (postCreated)="onPostAdded($event)" class="app-post-create"></app-post-create>
-  </div>
-  <div class="page" id="page1">
-    <br>
+  </span>
+  <span class="page" id="page1">
+    <span class="page-title">Documents</span>
     <app-post-list [post]="posts"></app-post-list>
     <br>
-  </div>
-  <div class="page" id="page2">
-    <br>
+  </span>
+  <span class="page" id="page2">
+    <span class="page-title">Jobs</span>
     <app-jobs></app-jobs>
-    <br>
-  </div>
+  </span>
+  <span class="page" id="page3">
+    <span class="page-title">Login</span>
+    <app-login></app-login>
+  </span>
 </div>

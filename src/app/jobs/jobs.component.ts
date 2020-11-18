@@ -12,10 +12,10 @@ export class JobsComponent implements OnInit {
 
     if (acc.style.display == "block") {
       acc.style.display = "none";
-      document.getElementById("jobExpand").innerHTML = "expand_less";
+      document.getElementById("jobExpand").innerHTML = "expand_more";
     } else {
       acc.style.display = "block";
-      document.getElementById("jobExpand").innerHTML = "expand_more";
+      document.getElementById("jobExpand").innerHTML = "expand_less";
     }
   }
 

@@ -1,0 +1,12 @@
+.body {
+  overflow-x: none;
+}
+
+#page1 {
+  visibility: hidden;
+}
+
+#page2 {
+  visibility: hidden;
+}
+

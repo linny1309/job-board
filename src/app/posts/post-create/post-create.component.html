@@ -1,0 +1,69 @@
+<div class="body">
+  <div class="post-create-div">
+    <div class="post-create-header">
+      <div class="post-create-user">Complete your profile</div>
+    </div>
+    <div class="post-create-header">
+      <div class="personal-info">Enter your personal information</div>
+    </div>
+    <input type="text" rows="6" [(ngModel)]="enteredFirstName" class="post-create-title" placeholder="Enter your first name" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredLastName" class="post-create-title" placeholder="Enter your last name" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredDOB" class="post-create-title" placeholder="Enter your DOB (MM/DD/YYY)" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredState" class="post-create-title" placeholder="Enter your state" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredCity" class="post-create-title" placeholder="Enter your city" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredZip" class="post-create-title" placeholder="Enter your zip code" required>
+    <br>
+    <!-- <textarea rows="6" [(ngModel)]="enteredValue" class="post-create-textarea" placeholder="Enter your post" required></textarea> !-->
+    <br>
+    <div class="post-create-header">
+      <div class="post-create-user">Enter education history</div>
+    </div>
+    <input type="text" rows="6" [(ngModel)]="enteredInstitution" class="post-create-title" placeholder="Enter institution" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredDegree" class="post-create-title" placeholder="Enter degree achieved" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredGradYear" class="post-create-title" placeholder="Enter year graduated" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredMajor" class="post-create-title" placeholder="Enter your major" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredMinor" class="post-create-title" placeholder="Enter your minor" required>
+    <br>
+    <br>
+    <div class="post-create-header">
+      <div class="post-create-user">Enter employment history</div>
+    </div>
+    <input type="text" rows="6" [(ngModel)]="enteredOrg" class="post-create-title" placeholder="Enter orginization" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredPosition" class="post-create-title" placeholder="Enter position" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredYearStart" class="post-create-title" placeholder="Enter year started" required>
+    <br>
+    <input type="text" rows="6" [(ngModel)]="enteredYearFinished" class="post-create-title" placeholder="Enter year ended" required>
+    <br>
+    <br>
+    <input type="submit" (click)="onAddPost(
+      enteredFirstName,
+      enteredLastName,
+      enteredDOB,
+      enteredState,
+      enteredCity,
+      enteredZip,
+      enteredInstitution,
+      enteredDegree,
+      enteredGradYear,
+      enteredMajor,
+      enteredMinor,
+      enteredOrg,
+      enteredPosition,
+      enteredYearStart,
+      enteredYearFinished
+    )" class="post-create-button" value="Submit">
+    <br>
+  </div>
+</div>
+

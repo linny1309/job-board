@@ -1,0 +1,17 @@
+<div class="body">
+  <app-header></app-header>
+  <app-menu></app-menu>
+  <div class="page" id="page0">
+    <app-post-create (postCreated)="onPostAdded($event)" class="app-post-create"></app-post-create>
+  </div>
+  <div class="page" id="page1">
+    <br>
+    <app-post-list [post]="posts"></app-post-list>
+    <br>
+  </div>
+  <div class="page" id="page2">
+    <br>
+    <app-jobs></app-jobs>
+    <br>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { LoginComponent } from './login/login.component';
+import { DocumentsComponent } from './documents/documents.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LoginComponent } from './login/login.component';
     RegistrationComponent,
     JobsComponent,
     LoginComponent,
+    DocumentsComponent,
   ],
   imports: [
     BrowserModule,

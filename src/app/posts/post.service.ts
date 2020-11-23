@@ -13,6 +13,8 @@ export class PostsService {
 
   constructor(private http: HttpClient) {}
 
+  //Getting posts from backend API to be sent to the front-end
+
   getPosts() {
     this.http.get<{message: string, posts: any}>(
       'http://localhost:3000/api/posts'
@@ -45,9 +47,37 @@ export class PostsService {
       });
   }
 
+  //Checks for a post update
+
   getPostUpdateListener() {
+    console.log(this.postsUpdated.asObservable());
     return this.postsUpdated.asObservable();
   }
+
+  //Gets posts given an id
+
+  getPost(id: string) {
+    return this.http.get<{
+      id: string,
+      firstName: string,
+      lastName: string,
+      dob: string,
+      state: string,
+      city: string,
+      zip: string,
+      institution: string,
+      degree: string,
+      gradYear: string,
+      major: string,
+      minor: string,
+      org: string,
+      position: string,
+      jobStart: string,
+      jobEnd: string,
+    }>('http://localhost:3000/api/posts/' + id);
+  }
+
+  //For adding a new post
 
   addPost(
     firstName: string,
@@ -85,18 +115,57 @@ export class PostsService {
       jobStart: jobStart,
       jobEnd: jobEnd,
     };
-    this.http.post<{message: string}>('http://localhost:3000/api/posts', post)
+    this.http
+    .post<{message: string, postId: string}>('http://localhost:3000/api/posts', post)
     .subscribe((responseData) => {
-      console.log(responseData.message)
+      const id = responseData.postId;
+      post.id = id;
+      this.posts.push(post);
+      this.postsUpdated.next([...this.posts]);
     });
-    this.posts.push(post);
-    this.postsUpdated.next([...this.posts]);
   }
+
+  //For updating an existing post
+
+  updatePost(id: string, firstName: string, lastName: string, dob: string, state: string, city: string, zip: string, institution: string, degree: string, gradYear: string, major: string, minor: string, org: string, position: string, jobStart: string, jobEnd: string) {
+    const post: Post = {
+      id: id,
+      firstName: firstName,
+      lastName: lastName,
+      dob: dob,
+      state: state,
+      city: city,
+      zip: zip,
+      institution: institution,
+      degree: degree,
+      gradYear: gradYear,
+      major: major,
+      minor: minor,
+      org: org,
+      position: position,
+      jobStart: jobStart,
+      jobEnd: jobEnd
+    }
+    this.http
+      .put("http://localhost:3000/api/posts/" + id, post)
+      .subscribe(response => {
+        console.log(response);
+        const updatedPosts = [...this.posts];
+        const oldPostIndex = updatedPosts.findIndex(p => p.id === post.id);
+        updatedPosts[oldPostIndex] = post;
+        this.posts = updatedPosts;
+        this.postsUpdated.next([...this.posts]);
+      });
+  }
+
+  //For deleting an existing post
 
   deletePost(postId: string) {
     this.http.delete("http://localhost:3000/api/posts/" + postId)
       .subscribe(() => {
-        console.log("Deleted");
-      })
+        const updatedPosts = this.posts.filter(post => post.id !== postId);
+        this.posts = updatedPosts;
+        this.postsUpdated.next([...this.posts]);
+      });
   }
 }

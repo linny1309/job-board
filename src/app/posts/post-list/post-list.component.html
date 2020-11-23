@@ -4,7 +4,7 @@
           <div class="post-list">
             <div class="accordion" id="acc{{i}}"><div class="title-div">{{post.firstName + " " + post.lastName}}</div>
               <i class="material-icons" id="accIcon{{i}}" (click)="onToggleAccordion(i)">expand_more</i>
-              <i class="material-icons" id="editIcon">edit</i>
+              <i class="material-icons" id="editIcon" [routerLink]="['/edit', post.id]">edit</i>
               <i class="material-icons" id="deleteIcon" (click)="onDelete(post.id)">delete</i>
             </div>
           </div>

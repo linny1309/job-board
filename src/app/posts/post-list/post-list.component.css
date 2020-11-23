@@ -74,3 +74,11 @@ i {
   margin-top: -25px;
   float: right;
 }
+
+.material-icons:hover {
+  color: rgb(177, 177, 177);
+}
+
+a {
+  color: white;
+}

@@ -12,6 +12,10 @@
   transition: 0.2s;
 }
 
+.menu-list {
+  margin-top: 70px;
+}
+
 .menu-item {
   display: block;
   margin-top: 10px;
@@ -22,7 +26,7 @@
 }
 
 .menu-item:hover {
-  color: gray;
+  color: rgb(177, 177, 177);
 }
 
 .menu-items {

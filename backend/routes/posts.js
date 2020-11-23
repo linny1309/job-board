@@ -1,39 +1,11 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const Post = require('./models/post');
-const app = express();
+const Post = require("../models/post");
 
-//Connecting to MongoDB database
-
-mongoose.connect('mongodb://localhost:27017/lite-dash')
-.then(() => {
-  console.log("Connected to database")
-})
-.catch(() => {
-  console.log("Connection failed")
-});
-
-app.use(bodyParser.json());
-
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PATCH, DELETE, PUT, OPTIONS"
-  );
-  next();
-});
+const router = express.Router();
 
 //Posting data for the first time
 
-app.post("/api/posts", (req, res, next) => {
+router.post("", (req, res, next) => {
   const post = new Post({
     title: req.body.title,
     content: req.body.content,
@@ -64,8 +36,7 @@ app.post("/api/posts", (req, res, next) => {
 
 //Updating existing posts
 
-app.put("/api/posts/:id", (req, res, next) => {
-  console.log(req.body._id);
+router.put("/:id", (req, res, next) => {
   const post = new Post({
     _id: req.body.id,
     title: req.body.title,
@@ -94,7 +65,7 @@ app.put("/api/posts/:id", (req, res, next) => {
 
 //Getting posts from MongoDB to dynamically send and view on the front-end
 
-app.get("/api/posts", (req, res, next) => {
+router.get("", (req, res, next) => {
   Post.find().then(documents => {
       res.status(200).json({
         message: "Post fetched succesfully",
@@ -105,7 +76,7 @@ app.get("/api/posts", (req, res, next) => {
 
 //Dynamic param for fetching a post with a particular id
 
-app.get("/api/posts/:id", (req, res, next) => {
+router.get("/:id", (req, res, next) => {
   Post.findById(req.params.id).then(post => {
     if(post) {
       res.status(200).json(post);
@@ -117,7 +88,7 @@ app.get("/api/posts/:id", (req, res, next) => {
 
 //Deleting a post from the backend
 
-app.delete("/api/posts/:id", (req, res, next) => {
+router.delete("/:id", (req, res, next) => {
   console.log(req.params.id);
   Post.deleteOne({_id: req.params.id}).then(result => {
     console.log(result);
@@ -125,4 +96,4 @@ app.delete("/api/posts/:id", (req, res, next) => {
   res.status(200).json({message: "Post deleted"});
 });
 
-module.exports = app;
+module.exports = router;

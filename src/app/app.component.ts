@@ -1,3 +1,4 @@
+//Employee Registration Application
 import { Component } from '@angular/core';
 
 @Component({

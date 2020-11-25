@@ -126,8 +126,8 @@ export class PostsService {
       post.id = id;
       this.posts.push(post);
       this.postsUpdated.next([...this.posts]);
-      alert("You have successfully created your profile");
-      this.navigate(["/jobs"]);
+      alert("You have successfully created your profile.");
+      this.navigate(["/documents"]);
     });
   }
 
@@ -161,8 +161,8 @@ export class PostsService {
         updatedPosts[oldPostIndex] = post;
         this.posts = updatedPosts;
         this.postsUpdated.next([...this.posts]);
-        alert("You have successfully edited your profile");
-        this.navigate(["/jobs"]);
+        alert("You have successfully edited your profile.");
+        this.navigate(["/documents"]);
       });
   }
 

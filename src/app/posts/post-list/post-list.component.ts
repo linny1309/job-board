@@ -29,8 +29,11 @@ export class PostListComponent {
     }
   }
 
-  onDelete(postId: string) {
-    this.postsService.deletePost(postId);
+  onDelete(postId: string, postFirstName: string, postLastName: string)  {
+    var txt;
+    if (confirm("Are you sure you want to delete the document for " + postFirstName + " " + postLastName + "?")) {
+      this.postsService.deletePost(postId);
+    }
   }
 
   ngOnInit() {

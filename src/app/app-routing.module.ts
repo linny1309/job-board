@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DocumentsComponent } from './documents/documents.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { EditComponent } from './edit/edit.component';
-import { JobsComponent } from './jobs/jobs.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
+import { EditComponent } from './pages/edit/edit.component';
+import { JobsComponent } from './pages/jobs/jobs.component';
 
 const routes: Routes = [
   { path: 'registration', component: RegistrationComponent},

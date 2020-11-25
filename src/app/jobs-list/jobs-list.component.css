@@ -1,14 +1,10 @@
 .body {
-  margin-top: 90px;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  position: absolute;
+  top: 100px;
+  width: 100%;
 }
 
 .accordion {
-  margin-top: 10px;
   height: 40px;
   background-color: #eee;
   color: rgb(255, 255, 255);
@@ -28,7 +24,7 @@
   display: block;
 }
 
-.panel {
+.jobPanel {
   margin-top: 10px;
   width: 605px;
   height: fit-content;
@@ -58,7 +54,6 @@
 
 .post-container {
   display: inline;
-  overflow: auto;
 }
 
 .post-list {
@@ -82,8 +77,4 @@ i {
 
 .material-icons:hover {
   color: rgb(177, 177, 177);
-}
-
-a {
-  color: white;
 }

@@ -1,46 +1,50 @@
-<div *ngIf="post.length > 0" class="body">
-      <div *ngFor="let post of post; index as i; first as isFirst" class="post-container">
-        <div>
-          <div class="post-list">
-            <div class="accordion" id="acc{{i}}"><div class="title-div">{{post.firstName + " " + post.lastName}}</div>
-              <i class="material-icons" id="accIcon{{i}}" (click)="onToggleAccordion(i)">expand_more</i>
-              <i class="material-icons" id="editIcon" [routerLink]="['/edit', post.id]">edit</i>
-              <i class="material-icons" id="deleteIcon" (click)="onDelete(post.id)">delete</i>
+<div class="body">
+  <app-loader *ngIf="isLoading"></app-loader>
+  <div *ngIf="post.length > 0 && !isLoading">
+        <div *ngFor="let post of post; index as i; first as isFirst" class="post-container">
+          <div>
+            <div class="post-list">
+              <div class="accordion" id="acc{{i}}"><div class="title-div">{{post.firstName + " " + post.lastName}}</div>
+                <i class="material-icons" id="accIcon{{i}}" (click)="onToggleAccordion(i)">expand_more</i>
+                <i class="material-icons" id="editIcon" [routerLink]="['/edit', post.id]">edit</i>
+                <i class="material-icons" id="deleteIcon" (click)="onDelete(post.id)">delete</i>
+              </div>
             </div>
+            <div class="post-list">
+            <div class="panel" id="panel{{i}}">
+              <span>DOB: {{post.dob}}</span>
+              <br>
+              <span>State: {{post.state}}</span>
+              <br>
+              <span>City: {{post.city}}</span>
+              <br>
+              <span>Zip Code: {{post.zip}}</span>
+              <br>
+              <span>Educational Institution: {{post.institution}}</span>
+              <br>
+              <span>Degree Achieved: {{post.degree}}</span>
+              <br>
+              <span>Grad Year: {{post.gradYear}}</span>
+              <br>
+              <span>Major: {{post.major}}</span>
+              <br>
+              <span>Minor: {{post.minor}}</span>
+              <br>
+              <span>Orginization: {{post.org}}</span>
+              <br>
+              <span>Position: {{post.position}}</span>
+              <br>
+              <span>Year Started: {{post.jobStart}}</span>
+              <br>
+              <span>Year Ended: {{post.jobEnd}}</span>
+              <br>
+            </div>
+            <br>
           </div>
-          <div class="post-list">
-          <div class="panel" id="panel{{i}}">
-            <span>DOB: {{post.dob}}</span>
-            <br>
-            <span>State: {{post.state}}</span>
-            <br>
-            <span>City: {{post.city}}</span>
-            <br>
-            <span>Zip Code: {{post.zip}}</span>
-            <br>
-            <span>Educational Institution: {{post.institution}}</span>
-            <br>
-            <span>Degree Achieved: {{post.degree}}</span>
-            <br>
-            <span>Grad Year: {{post.gradYear}}</span>
-            <br>
-            <span>Major: {{post.major}}</span>
-            <br>
-            <span>Minor: {{post.minor}}</span>
-            <br>
-            <span>Orginization: {{post.org}}</span>
-            <br>
-            <span>Position: {{post.position}}</span>
-            <br>
-            <span>Year Started: {{post.jobStart}}</span>
-            <br>
-            <span>Year Ended: {{post.jobEnd}}</span>
-            <br>
-          </div>
-          <br>
         </div>
-      </div>
+  </div>
+  <div *ngIf="post.length <= 0" class="no-posts">No posts added yet</div>
 </div>
-<div *ngIf="post.length <= 0" class="no-posts">No posts added yet</div>
+
 
 

@@ -15,6 +15,7 @@ export class PostListComponent {
 
   @Input() post: Post[] = [];
   private postsSub: Subscription;
+  isLoading = false;
 
   onToggleAccordion(i) {
     var acc : HTMLElement = document.getElementById("panel"+i);
@@ -33,9 +34,11 @@ export class PostListComponent {
   }
 
   ngOnInit() {
+    this.isLoading = true;
     this.postsService.getPosts();
     this.postsSub = this.postsService.getPostUpdateListener()
       .subscribe((posts: Post[]) => {
+        this.isLoading = false
         this.post = posts;
       });
   }

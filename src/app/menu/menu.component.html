@@ -1,8 +1,8 @@
 <div class="menu" id="menu">
-<div class="menu-list">
-  <div *ngFor="let menu of customMenu; index as i; first as isFirst">
-    <span (click)="toggleTitle(menu); togglePage(i)" class="menu-item no-select">{{menu}}</span>
-    <br>
+  <div class="menu-list">
+    <div *ngFor="let menu of customMenu; index as i; first as isFirst">
+      <span (click)="toggleTitle(menu); togglePage(i)" class="menu-item no-select" id=menu>{{menu}}</span>
+      <br>
+    </div>
   </div>
-</div>
 </div>

@@ -1,5 +1,6 @@
 <div class="body">
-  <div class="post-create-div">
+  <app-loader *ngIf="isLoading"></app-loader>
+  <div class="post-create-div" *ngIf="!isLoading">
     <div class="post-create-header">
       <div class="post-create-user">Complete your profile</div>
     </div>

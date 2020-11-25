@@ -12,3 +12,15 @@
   color: darkblue;
 }
 
+#page1 {
+  visibility: hidden;
+}
+
+#page2 {
+  visibility: hidden;
+}
+
+#page3 {
+  visibility: hidden;
+}
+

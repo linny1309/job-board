@@ -1,5 +1,8 @@
 .body {
-  overflow-x: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .page-title {
@@ -10,10 +13,13 @@
   font-size: 20px;
   font-weight: bold;
   color: darkblue;
+  left: 0;
 }
 
 #page1 {
   visibility: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 #page2 {

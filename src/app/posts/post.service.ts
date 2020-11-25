@@ -2,16 +2,20 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http';
-
+import { Router } from '@angular/router';
 import { Post } from './post.model';
-
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
+
+  //Navigate away from page
+  navigate(url: string[]) {
+    this.router.navigate(url);
+  }
 
   //Getting posts from backend API to be sent to the front-end
 
@@ -122,6 +126,8 @@ export class PostsService {
       post.id = id;
       this.posts.push(post);
       this.postsUpdated.next([...this.posts]);
+      alert("You have successfully created your profile");
+      this.navigate(["/jobs"]);
     });
   }
 
@@ -155,6 +161,8 @@ export class PostsService {
         updatedPosts[oldPostIndex] = post;
         this.posts = updatedPosts;
         this.postsUpdated.next([...this.posts]);
+        alert("You have successfully edited your profile");
+        this.navigate(["/jobs"]);
       });
   }
 

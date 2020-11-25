@@ -10,9 +10,12 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { JobsComponent } from './jobs/jobs.component';
+import { JobsListComponent } from './jobs-list/jobs-list.component';
 import { LoginComponent } from './login/login.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { EditComponent } from './edit/edit.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,12 @@ import { DocumentsComponent } from './documents/documents.component';
     PostListComponent,
     MenuComponent,
     RegistrationComponent,
-    JobsComponent,
+    JobsListComponent,
     LoginComponent,
     DocumentsComponent,
+    EditComponent,
+    JobsComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

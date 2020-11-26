@@ -103,26 +103,39 @@ app-loader {
   border-radius: 5px;
   box-shadow: 3px 5px 3px rgb(21, 21, 21);
   background-color: rgb(22, 22, 118);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: bold;
   color: lightgray;
   padding: 10px;
   display: block;
+  display: flex;
+  justify-content: center
 }
 
 .post-create-button:hover {
   cursor: pointer;
 }
 
+button {
+}
+
 /* Change the white to any color ;) */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active  {
+.button:-webkit-autofill,
+.button:-webkit-autofill:hover,
+.button:-webkit-autofill:focus,
+.button:-webkit-autofill:active  {
     background-color: rgb(67, 93, 240) !important;
     color: white;
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: #fff !important;
+}
+
+.photo-span {
+  margin-top: 1.5px;
+  font-size: 20px;
+}
+
+.material-icons {
 }
 
 @media only screen and (max-width: 900px) {
@@ -239,10 +252,10 @@ input:-webkit-autofill:active  {
   }
 
   /* Change the white to any color ;) */
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active  {
+  .button:-webkit-autofill,
+  .button:-webkit-autofill:hover,
+  .button:-webkit-autofill:focus,
+  .button:-webkit-autofill:active  {
       background-color: rgb(67, 93, 240) !important;
       color: white;
       transition: background-color 5000s ease-in-out 0s;
@@ -364,10 +377,10 @@ input:-webkit-autofill:active  {
   }
 
   /* Change the white to any color ;) */
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active  {
+  .button:-webkit-autofill,
+  .button:-webkit-autofill:hover,
+  .button:-webkit-autofill:focus,
+  .button:-webkit-autofill:active  {
       background-color: rgb(67, 93, 240) !important;
       color: white;
       transition: background-color 5000s ease-in-out 0s;

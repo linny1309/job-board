@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Post } from '../post.model';
 import { PostsService } from '../post.service';
 import { DatePipe } from '@angular/common';
+import { FormControl, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-post-create',
@@ -31,6 +32,7 @@ export class PostCreateComponent implements OnInit {
   enteredYearStart = '';
   enteredYearFinished = '';
 
+  form: FormGroup;
   private mode = 'create';
   private postId: string;
   isLoading = false;
@@ -56,69 +58,118 @@ export class PostCreateComponent implements OnInit {
     jobEnd : new Date("01/01/2000"),
   };
 
-  onSavePost( enteredFirstName, enteredLastName, enteredDOB, enteredState, enteredCity, enteredZip, enteredInstitution, enteredDegree, enteredGradYear, enteredMajor, enteredMinor, enteredOrg, enteredPosition, enteredYearStart, enteredYearFinished) {
+  onSavePost() {
     console.log(this.post.id);
+    this.isLoading = true;
     if(this.mode === 'create') {
       const post: Post = {
         id: null,
-        firstName: this.enteredFirstName,
-        lastName: this.enteredLastName,
-        dob: new Date(this.enteredDOB),
-        state: this.enteredState,
-        city: this.enteredCity,
-        zip: this.enteredZip,
-        institution: this.enteredInstitution,
-        degree: this.enteredDegree,
-        gradYear: new Date(this.enteredGradYear),
-        major: this.enteredMajor,
-        minor: this.enteredMinor,
-        org: this.enteredOrg,
+        firstName: this.form.value.firstName,
+        lastName: this.form.value.lastName,
+        dob: this.form.value.dob,
+        state: this.form.value.state,
+        city: this.form.value.city,
+        zip: this.form.value.zip,
+        institution: this.form.value.institution,
+        degree: this.form.value.degree,
+        gradYear: this.form.value.gradYear,
+        major: this.form.value.major,
+        minor: this.form.value.minor,
+        org: this.form.value.org,
         position: this.enteredPosition,
-        jobStart: new Date(this.enteredYearStart),
-        jobEnd: new Date(this.enteredYearFinished)
+        jobStart: this.form.value.jobStart,
+        jobEnd: this.form.value.jobEnd
       }
       this.postsService.addPost(
-          enteredFirstName,
-          enteredLastName,
-          enteredDOB,
-          enteredState,
-          enteredCity,
-          enteredZip,
-          enteredInstitution,
-          enteredDegree,
-          enteredGradYear,
-          enteredMajor,
-          enteredMinor,
-          enteredOrg,
-          enteredPosition,
-          enteredYearStart,
-          enteredYearFinished
+        this.form.value.firstName,
+        this.form.value.lastName,
+        this.form.value.dob,
+        this.form.value.state,
+        this.form.value.city,
+        this.form.value.zip,
+        this.form.value.institution,
+        this.form.value.degree,
+        this.form.value.gradYear,
+        this.form.value.major,
+        this.form.value.minor,
+        this.form.value.org,
+        this.form.value.position,
+        this.form.value.jobStart,
+        this.form.value.jobEnd
         );
       this.postCreated.emit(post);
     }
     else {
       this.postsService.updatePost(
         this.postId,
-        enteredFirstName,
-        enteredLastName,
-        enteredDOB,
-        enteredState,
-        enteredCity,
-        enteredZip,
-        enteredInstitution,
-        enteredDegree,
-        enteredGradYear,
-        enteredMajor,
-        enteredMinor,
-        enteredOrg,
-        enteredPosition,
-        enteredYearStart,
-        enteredYearFinished
+        this.form.value.firstName,
+        this.form.value.lastName,
+        this.form.value.dob,
+        this.form.value.state,
+        this.form.value.city,
+        this.form.value.zip,
+        this.form.value.institution,
+        this.form.value.degree,
+        this.form.value.gradYear,
+        this.form.value.major,
+        this.form.value.minor,
+        this.form.value.org,
+        this.form.value.position,
+        this.form.value.jobStart,
+        this.form.value.jobEnd
       )
     }
+    this.form.reset();
   }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      firstName: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      lastName: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      dob: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      state: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      city: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      zip: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      institution: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      degree: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      gradYear: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      major: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      minor: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      org: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      position: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      jobStart: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      jobEnd: new FormControl(null,
+        {validators: [Validators.required, Validators.minLength(2)] ,
+        })
+    });
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if(paramMap.has('postId')) {
         this.mode = 'edit';
@@ -144,7 +195,24 @@ export class PostCreateComponent implements OnInit {
             position: postData.position,
             jobStart: postData.jobStart,
             jobEnd: postData.jobEnd
-          }
+          };
+          this.form.setValue({
+            firstName: this.post.firstName,
+            lastName: this.post.lastName,
+            dob: this.post.dob,
+            state: this.post.state,
+            city: this.post.city,
+            zip: this.post.zip,
+            institution: this.post.institution,
+            degree: this.post.degree,
+            gradYear: this.post.gradYear,
+            major: this.post.major,
+            minor: this.post.minor,
+            org: this.post.org,
+            position: this.post.position,
+            jobStart: this.post.jobStart,
+            jobEnd: this.post.jobEnd
+          });
         });
       }
       else {

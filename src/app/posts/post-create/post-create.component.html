@@ -1,70 +1,57 @@
 <div class="body">
   <app-loader *ngIf="isLoading"></app-loader>
-  <div class="post-create-div" *ngIf="!isLoading">
+  <form [formGroup]="form" class="post-create-div" *ngIf="!isLoading">
     <div class="post-create-header">
       <div class="post-create-user">Complete your profile</div>
     </div>
     <div class="post-create-header">
       <div class="personal-info">Enter your personal information</div>
     </div>
-    <input type="text" rows="6" [(ngModel)]="post.firstName" class="post-create-title" placeholder="Enter your first name" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="firstName" placeholder="Enter your first name" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.lastName" class="post-create-title" placeholder="Enter your last name" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="lastName" placeholder="Enter your last name" required>
     <br>
-    <input type="text" rows="6" [ngModel]="enteredDOB" class="post-create-title" placeholder="Enter your DOB (MM/DD/YYY)" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="dob" placeholder="Enter your DOB (MM/DD/YYY)" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.state" class="post-create-title" placeholder="Enter your state" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="state" placeholder="Enter your state" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.city" class="post-create-title" placeholder="Enter your city" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="city" placeholder="Enter your city" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.zip" class="post-create-title" placeholder="Enter your zip code" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="zip" placeholder="Enter your zip code" required>
     <br>
-    <!-- <textarea rows="6" [(ngModel)]="enteredLetter" class="post-create-textarea" placeholder="Enter your post" required></textarea> !-->
+    <!-- <textarea rows="6" ="enteredLetter" class="post-create-textarea" formControlName="" placeholder="Enter your post" required></textarea> !-->
     <br>
     <div class="post-create-header">
       <div class="post-create-user">Enter education history</div>
     </div>
-    <input type="text" rows="6" [(ngModel)]="post.institution" class="post-create-title" placeholder="Enter institution" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="institution" placeholder="Enter institution" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.degree" class="post-create-title" placeholder="Enter degree achieved" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="degree" placeholder="Enter degree achieved" required>
     <br>
-    <input type="text" rows="6" [ngModel]="enteredGradYear" class="post-create-title" placeholder="Enter year graduated" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="gradYear" placeholder="Enter year graduated" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.major" class="post-create-title" placeholder="Enter your major" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="major" placeholder="Enter your major" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.minor" class="post-create-title" placeholder="Enter your minor" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="minor" placeholder="Enter your minor" required>
     <br>
     <br>
     <div class="post-create-header">
       <div class="post-create-user">Enter employment history</div>
     </div>
-    <input type="text" rows="6" [(ngModel)]="post.org" class="post-create-title" placeholder="Enter orginization" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="org" placeholder="Enter orginization" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.position" class="post-create-title" placeholder="Enter position" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="position" placeholder="Enter position" required>
     <br>
-    <input type="text" rows="6" [ngModel]="enteredYearStart" class="post-create-title" placeholder="Enter year started" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="jobStart" placeholder="Enter year started" required>
     <br>
-    <input type="text" rows="6" [ngModel]="enteredYearFinished" class="post-create-title" placeholder="Enter year ended" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="jobEnd" placeholder="Enter year ended" required>
     <br>
     <br>
-    <input type="submit" (click)="onSavePost(
-      post.firstName,
-      post.lastName,
-      post.dob,
-      post.state,
-      post.city,
-      post.zip,
-      post.institution,
-      post.degree,
-      post.gradYear,
-      post.major,
-      post.minor,
-      post.org,
-      post.position,
-      post.jobStart,
-      post.jobEnd
-    )" class="post-create-button" value="Submit">
+    <input type="submit" class="button" (click)="onSavePost()" class="post-create-button" value="Submit">
     <br>
-  </div>
-</div>
+    <button class="post-create-button" type="button" (click)="filePicker.click()"><i class="material-icons">photo</i><span class="photo-span">Photo</span></button>
+    <br>
+    <input type="file" style="visibility:hidden" #filePicker>
+    <br>
+</form>
 

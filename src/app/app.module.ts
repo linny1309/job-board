@@ -16,6 +16,9 @@ import { EditComponent } from './pages/edit/edit.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { SelectComponent } from './select/select.component';
+import { ChartjsFormComponent } from './chartjs-form/chartjs-form.component';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     EditComponent,
     LoaderComponent,
     JobsComponent,
-    PostListComponent
+    PostListComponent,
+    SelectComponent,
+    ChartjsFormComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,

@@ -11,18 +11,23 @@ export class HeaderComponent implements OnInit {
   customHeader: string[];
 
   constructor() { }
-
   toggleMenu() {
     if(document.getElementById("menu").style.visibility == "visible") {
       document.getElementById("menu").style.visibility = "hidden";
       document.getElementById("menu").style.opacity = "0";
+      document.getElementById("shade").style.opacity = "0";
+      document.getElementById("shade").style.visibility = "hidden";
     } else {
       document.getElementById("menu").style.visibility = "visible";
       document.getElementById("menu").style.opacity = "1";
+      document.getElementById("shade").style.opacity = ".7";
+      document.getElementById("shade").style.visibility = "visible";
     }
   }
 
   ngOnInit(): void {
+    this.toggleMenu();
+    this.toggleMenu();
   }
 
 }

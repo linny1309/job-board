@@ -1,5 +1,6 @@
 <div class="body">
-  <app-loader *ngIf="isLoading"></app-loader>
+  <app-loader *ngIf="isLoading && !isDemo" ></app-loader>
+  <span class="error-span" *ngIf="post.length == 0 && isDemo">The application is empty or not connected.</span>
   <div *ngIf="post.length > 0 && !isLoading">
         <div *ngFor="let post of post; index as i; first as isFirst" class="post-container">
           <div>

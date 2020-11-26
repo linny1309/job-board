@@ -14,6 +14,7 @@ export class PostListComponent {
   constructor(public postsService: PostsService) { }
 
   @Input() post: Post[] = [];
+  @Input() isDemo: boolean;
   private postsSub: Subscription;
   isLoading = false;
 

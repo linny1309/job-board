@@ -7,6 +7,12 @@
   overflow: hidden;
 }
 
+.error-span {
+  font-size: 16px;
+  color: rgb(0, 0, 72);
+  font-weight: bold;
+}
+
 .accordion {
   margin-top: 10px;
   height: 40px;
@@ -86,4 +92,181 @@ i {
 
 a {
   color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  .accordion {
+    margin-top: 10px;
+    height: 40px;
+    background-color: #eee;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    cursor: pointer;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    width: 405px;
+    border: none;
+    text-align: left;
+    outline: none;
+    background-color: darkblue;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+  }
+
+  .panel {
+    margin-top: 10px;
+    width: 400px;
+    height: fit-content;
+    background-color: rgb(67, 93, 240);
+    overflow: hidden;
+    color: lightgray;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    padding: 10px;
+    display: none;
+  }
+
+  .no-posts {
+    width: 400px;
+    height: fit-content;
+    background-color: rgb(80, 80, 80);
+    overflow: hidden;
+    color: lightgray;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    padding: 10px;
+    z-index: 30;
+    text-align: center;
+  }
+
+  .post-container {
+    display: inline;
+    overflow: auto;
+  }
+
+  .post-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title-div {
+    background-color: rgb(22, 22, 118);
+    width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+  }
+
+  i {
+    margin: 7px;
+    margin-top: -25px;
+    float: right;
+  }
+
+  .material-icons:hover {
+    color: rgb(177, 177, 177);
+  }
+
+  a {
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .accordion {
+    margin-top: 10px;
+    height: 40px;
+    background-color: #eee;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    cursor: pointer;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 275px;
+    border: none;
+    text-align: left;
+    outline: none;
+    background-color: darkblue;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+  }
+
+  .panel {
+    margin-top: 10px;
+    width: 270px;
+    height: fit-content;
+    background-color: rgb(67, 93, 240);
+    overflow: hidden;
+    color: lightgray;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    padding: 10px;
+    display: none;
+  }
+
+  .no-posts {
+    width: 400px;
+    height: fit-content;
+    background-color: rgb(80, 80, 80);
+    overflow: hidden;
+    color: lightgray;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    padding: 10px;
+    z-index: 30;
+    text-align: center;
+  }
+
+  .post-container {
+    display: inline;
+    overflow: auto;
+  }
+
+  .post-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title-div {
+    background-color: rgb(22, 22, 118);
+    width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+  }
+
+  i {
+    margin: 7px;
+    margin-top: -25px;
+    float: right;
+  }
+
+  .material-icons {
+    margin-top: -20px;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+  .material-icons:hover {
+    color: rgb(177, 177, 177);
+  }
+
+  a {
+    color: white;
+  }
 }

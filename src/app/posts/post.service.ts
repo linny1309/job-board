@@ -65,19 +65,19 @@ export class PostsService {
       id: string,
       firstName: string,
       lastName: string,
-      dob: string,
+      dob: Date,
       state: string,
       city: string,
       zip: string,
       institution: string,
       degree: string,
-      gradYear: string,
+      gradYear: Date,
       major: string,
       minor: string,
       org: string,
       position: string,
-      jobStart: string,
-      jobEnd: string,
+      jobStart: Date,
+      jobEnd: Date,
     }>('http://localhost:3000/api/posts/' + id);
   }
 
@@ -86,19 +86,19 @@ export class PostsService {
   addPost(
     firstName: string,
     lastName: string,
-    dob: string,
+    dob: Date,
     state: string,
     city: string,
     zip: string,
     institution: string,
     degree: string,
-    gradYear: string,
+    gradYear: Date,
     major: string,
     minor: string,
     org: string,
     position: string,
-    jobStart: string,
-    jobEnd: string,
+    jobStart: Date,
+    jobEnd: Date,
     ) {
 
     const post: Post = {
@@ -133,7 +133,7 @@ export class PostsService {
 
   //For updating an existing post
 
-  updatePost(id: string, firstName: string, lastName: string, dob: string, state: string, city: string, zip: string, institution: string, degree: string, gradYear: string, major: string, minor: string, org: string, position: string, jobStart: string, jobEnd: string) {
+  updatePost(id: string, firstName: string, lastName: string, dob: Date, state: string, city: string, zip: string, institution: string, degree: string, gradYear: Date, major: string, minor: string, org: string, position: string, jobStart: Date, jobEnd: Date) {
     const post: Post = {
       id: id,
       firstName: firstName,

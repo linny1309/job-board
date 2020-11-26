@@ -11,7 +11,7 @@
     <br>
     <input type="text" rows="6" [(ngModel)]="post.lastName" class="post-create-title" placeholder="Enter your last name" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.dob" class="post-create-title" placeholder="Enter your DOB (MM/DD/YYY)" required>
+    <input type="text" rows="6" [ngModel]="enteredDOB" class="post-create-title" placeholder="Enter your DOB (MM/DD/YYY)" required>
     <br>
     <input type="text" rows="6" [(ngModel)]="post.state" class="post-create-title" placeholder="Enter your state" required>
     <br>
@@ -28,7 +28,7 @@
     <br>
     <input type="text" rows="6" [(ngModel)]="post.degree" class="post-create-title" placeholder="Enter degree achieved" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.gradYear" class="post-create-title" placeholder="Enter year graduated" required>
+    <input type="text" rows="6" [ngModel]="enteredGradYear" class="post-create-title" placeholder="Enter year graduated" required>
     <br>
     <input type="text" rows="6" [(ngModel)]="post.major" class="post-create-title" placeholder="Enter your major" required>
     <br>
@@ -42,9 +42,9 @@
     <br>
     <input type="text" rows="6" [(ngModel)]="post.position" class="post-create-title" placeholder="Enter position" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.jobStart" class="post-create-title" placeholder="Enter year started" required>
+    <input type="text" rows="6" [ngModel]="enteredYearStart" class="post-create-title" placeholder="Enter year started" required>
     <br>
-    <input type="text" rows="6" [(ngModel)]="post.jobEnd" class="post-create-title" placeholder="Enter year ended" required>
+    <input type="text" rows="6" [ngModel]="enteredYearFinished" class="post-create-title" placeholder="Enter year ended" required>
     <br>
     <br>
     <input type="submit" (click)="onSavePost(

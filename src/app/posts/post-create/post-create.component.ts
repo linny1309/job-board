@@ -1,15 +1,20 @@
 import { Component, EventEmitter, Output, OnInit } from "@angular/core";
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Post } from '../post.model'
-import { PostsService } from '../post.service'
+import { Post } from '../post.model';
+import { PostsService } from '../post.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
   styleUrls: ["./post-create.component.css"],
+  providers: [DatePipe],
 })
 
 export class PostCreateComponent implements OnInit {
+
+  constructor(public postsService: PostsService, public route: ActivatedRoute, public datePipe: DatePipe) {}
+
   enteredFirstName = '';
   enteredLastName = '';
   enteredDOB = '';
@@ -30,28 +35,26 @@ export class PostCreateComponent implements OnInit {
   private postId: string;
   isLoading = false;
 
+  @Output() postCreated = new EventEmitter<Post>();
+
   post: Post = {
     id: "",
     firstName: "",
     lastName: "",
-    dob: "",
+    dob: new Date("01/01/1975"),
     state: "",
     city: "",
     zip: "",
     institution: "",
     degree: "",
-    gradYear: "",
+    gradYear: new Date("06/01/1997"),
     major: "",
     minor: "",
     org: "",
     position: "",
-    jobStart: "",
-    jobEnd : ""
+    jobStart: new Date("09/01/1997"),
+    jobEnd : new Date("01/01/2000"),
   };
-
-  @Output() postCreated = new EventEmitter<Post>();
-
-  constructor(public postsService: PostsService, public route: ActivatedRoute) {}
 
   onSavePost( enteredFirstName, enteredLastName, enteredDOB, enteredState, enteredCity, enteredZip, enteredInstitution, enteredDegree, enteredGradYear, enteredMajor, enteredMinor, enteredOrg, enteredPosition, enteredYearStart, enteredYearFinished) {
     console.log(this.post.id);
@@ -60,19 +63,19 @@ export class PostCreateComponent implements OnInit {
         id: null,
         firstName: this.enteredFirstName,
         lastName: this.enteredLastName,
-        dob: this.enteredDOB,
+        dob: new Date(this.enteredDOB),
         state: this.enteredState,
         city: this.enteredCity,
         zip: this.enteredZip,
         institution: this.enteredInstitution,
         degree: this.enteredDegree,
-        gradYear: this.enteredGradYear,
+        gradYear: new Date(this.enteredGradYear),
         major: this.enteredMajor,
         minor: this.enteredMinor,
         org: this.enteredOrg,
         position: this.enteredPosition,
-        jobStart: this.enteredYearStart,
-        jobEnd: this.enteredYearFinished
+        jobStart: new Date(this.enteredYearStart),
+        jobEnd: new Date(this.enteredYearFinished)
       }
       this.postsService.addPost(
           enteredFirstName,

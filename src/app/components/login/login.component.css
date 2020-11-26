@@ -120,4 +120,129 @@ input:-webkit-autofill:active  {
     -webkit-text-fill-color: #fff !important;
 }
 
+@media only screen and (max-width: 650px) {
+  .body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .post-create-div {
+    position: absolute;
+    top: 100px;
+  }
+
+  .post-create-header {
+    width: 315px;
+    background-color: darkblue;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    margin-bottom: 10px;
+    padding: 5px;
+    color: lightgray;
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .post-create-title-header {
+    width: 315px;
+    background-color: blue;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    margin-bottom: 10px;
+    padding: 5px;
+    color: lightgray;
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .post-create-user {
+    width: fit-content;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    background-color: rgb(22, 22, 118);
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .post-create-title {
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    background-color: blue;
+    border-radius: 5px;
+    padding: 5px;
+    width: 315px;
+  }
+
+  .personal-info {
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    background-color: rgb(22, 22, 118);
+    border-radius: 5px;
+    padding: 5px;
+    width: 315px;
+  }
+
+  .post-create-textarea {
+    background-color: rgb(80, 80, 80);
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    resize: none;
+    border-radius: 5px;
+    border: none;
+    color: rgb(85, 85, 85);
+    font-size: 20px;
+    width: 305px;
+    height: 150px;
+    padding: 10px;
+  }
+
+  .post-create-title {
+    background-color: rgb(67, 93, 240);
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    resize: none;
+    border-radius: 5px;
+    border: none;
+    color:   rgb(255, 255, 255);
+    font-size: 20px;
+    width: 305px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  ::placeholder {
+    color:   rgb(255, 255, 255);
+    opacity: 1;
+  }
+
+  .post-create-textarea:focus{
+    border: 0 none #FFF;
+    overflow: hidden;
+    outline: none;
+  }
+
+  .post-create-button {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+    background-color: rgb(22, 22, 118);
+    font-size: 20px;
+    font-weight: bold;
+    color: lightgray;
+    padding: 10px;
+    display: block;
+  }
+
+  .post-create-button:hover {
+    cursor: pointer;
+  }
+
+  /* Change the white to any color ;) */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active  {
+      background-color: rgb(67, 93, 240) !important;
+      color: white;
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #fff !important;
+  }
+}
+
 

@@ -1,8 +1,6 @@
 .body {
   overflow-x: hidden;
   overflow-y: hidden;
-  display: flex;
-  justify-content: center;
 }
 
 .page-title {
@@ -29,6 +27,53 @@
 #page3 {
   visibility: hidden;
 }
+#page4 {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#page5 {
+  visibility: hidden;
+}
+
+app-post-list {
+  position: absolute;
+  top: 10px;
+}
+
+.loader-container {
+  width: 100%;
+  height: 100px;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+app-loader {
+  height: 10px;
+  position: absolute;
+  top: 100px;
+}
+
+@media only screen and (max-height: 700px) {
+.loader-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  top: 10px;
+  justify-content: center;
+}
+
+
+app-loader {
+  margin-top: -80px;
+  top: -30px;
+  height: 10px;
+  position: absolute;
+}
+}
+
 
 @media only screen and (max-width: 900px) {
   .page-title {

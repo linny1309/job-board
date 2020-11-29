@@ -21,6 +21,7 @@ import { ChartjsFormComponent } from './chartjs-form/chartjs-form.component';
 import { DemoComponent } from './demo/demo.component';
 import { ChartsModule } from 'ng2-charts';
 import { VisualsComponent } from './visuals/visuals.component';
+import { KpiCardComponent } from './kpi-card/kpi-card.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VisualsComponent } from './visuals/visuals.component';
     SelectComponent,
     ChartjsFormComponent,
     DemoComponent,
-    VisualsComponent
+    VisualsComponent,
+    KpiCardComponent
   ],
   imports: [
     BrowserModule,

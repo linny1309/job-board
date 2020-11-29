@@ -24,6 +24,8 @@ export class VisualsComponent implements OnInit {
   dobCount = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   genCount = [0,0,0,0]
   @ViewChild('fullScreen') divRef;
+  decadeMode: number;
+  dobGroup: number[];
 
   constructor(public postsService: PostsService) { }
 
@@ -111,6 +113,7 @@ export class VisualsComponent implements OnInit {
       for(m = 0; m < this.dobCount.length; m++) {
         if(parseInt(arr[n]) >= this.barChartLabels[m] && parseInt(arr[n]) < this.barChartLabels[m+1])
           this.dobCount[m]++;
+          this.dobGroup.push(this.barChartLabels[m]);
       }
     }
   }

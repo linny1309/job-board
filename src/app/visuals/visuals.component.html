@@ -2,6 +2,7 @@
 <app-menu [customMenu]="['Applicants by Decade','Applicants by Generation']"></app-menu>
 <div class="body" style="display: flex; justify-content: center;">
   <div class="body-2">
+    <app-kpi-card [kpiTitle]='["Decade with Most Applicants"]' [kpiScore]=decadeMode></app-kpi-card>
     <div class="chart-container page" id="page0" style="visibility: visible" *ngIf="!isLoading">
       <canvas baseChart
               [datasets]="barChartData"
@@ -25,5 +26,8 @@
     </div>
     <br>
   </div>
+</div>
+<div class="loading-container">
   <app-loader *ngIf="isLoading"></app-loader>
 </div>
+

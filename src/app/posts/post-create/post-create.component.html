@@ -53,7 +53,7 @@
     <br>
     <input type="file" style="visibility:hidden" (change)="onImagePicked($event)" #filePicker>
     <br>
-    <div class="image-preview" *ngIf="imgPreview !== '' && imgPreview">
+    <div class="image-preview" formControlName="image" *ngIf="imgPreview !== '' && imgPreview">
       <img [src]="imgPreview" [alt]="form.value.firstName">
     </div>
 </form>

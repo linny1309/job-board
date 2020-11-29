@@ -57,6 +57,7 @@ export class PostCreateComponent implements OnInit {
     position: "",
     jobStart: new Date("09/01/1997"),
     jobEnd : new Date("01/01/2000"),
+    image: ""
   };
 
   onImagePicked(event: Event) {
@@ -92,7 +93,8 @@ export class PostCreateComponent implements OnInit {
         org: this.form.value.org,
         position: this.enteredPosition,
         jobStart: this.form.value.jobStart,
-        jobEnd: this.form.value.jobEnd
+        jobEnd: this.form.value.jobEnd,
+        image: this.form.value.image
       }
       this.postsService.addPost(
         this.form.value.firstName,
@@ -109,7 +111,8 @@ export class PostCreateComponent implements OnInit {
         this.form.value.org,
         this.form.value.position,
         this.form.value.jobStart,
-        this.form.value.jobEnd
+        this.form.value.jobEnd,
+        this.form.value.image
         );
       this.postCreated.emit(post);
     }
@@ -130,7 +133,7 @@ export class PostCreateComponent implements OnInit {
         this.form.value.org,
         this.form.value.position,
         this.form.value.jobStart,
-        this.form.value.jobEnd
+        this.form.value.jobEnd,
       )
     }
     this.form.reset();
@@ -211,7 +214,8 @@ export class PostCreateComponent implements OnInit {
             org: postData.org,
             position: postData.position,
             jobStart: postData.jobStart,
-            jobEnd: postData.jobEnd
+            jobEnd: postData.jobEnd,
+            image: ""
           };
           this.form.setValue({
             firstName: this.post.firstName,
@@ -228,7 +232,8 @@ export class PostCreateComponent implements OnInit {
             org: this.post.org,
             position: this.post.position,
             jobStart: this.post.jobStart,
-            jobEnd: this.post.jobEnd
+            jobEnd: this.post.jobEnd,
+            image: ""
           });
         });
       }

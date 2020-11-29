@@ -99,6 +99,7 @@ export class PostsService {
     position: string,
     jobStart: Date,
     jobEnd: Date,
+    image: ""
     ) {
 
     const post: Post = {
@@ -118,6 +119,7 @@ export class PostsService {
       position: position,
       jobStart: jobStart,
       jobEnd: jobEnd,
+      image: "",
     };
     this.http
     .post<{message: string, postId: string}>('http://localhost:3000/api/posts', post)
@@ -150,7 +152,8 @@ export class PostsService {
       org: org,
       position: position,
       jobStart: jobStart,
-      jobEnd: jobEnd
+      jobEnd: jobEnd,
+      image: ""
     }
     this.http
       .put("http://localhost:3000/api/posts/" + id, post)

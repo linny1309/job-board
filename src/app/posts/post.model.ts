@@ -15,4 +15,5 @@ export interface Post {
   position: string;
   jobStart: Date;
   jobEnd: Date;
+  image: any;
 }

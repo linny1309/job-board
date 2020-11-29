@@ -138,6 +138,15 @@ button {
 .material-icons {
 }
 
+.image-preview {
+  height: 5rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
+}
+
 @media only screen and (max-width: 900px) {
   .body {
     display: flex;

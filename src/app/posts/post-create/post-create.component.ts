@@ -36,6 +36,7 @@ export class PostCreateComponent implements OnInit {
   private mode = 'create';
   private postId: string;
   isLoading = false;
+  imgPreview: string;
 
   @Output() postCreated = new EventEmitter<Post>();
 
@@ -57,6 +58,19 @@ export class PostCreateComponent implements OnInit {
     jobStart: new Date("09/01/1997"),
     jobEnd : new Date("01/01/2000"),
   };
+
+  onImagePicked(event: Event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.form.patchValue({image: file});
+    this.form.get('image').updateValueAndValidity();
+    console.log(file);
+    console.log(this.form);
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imgPreview = reader.result as string;
+    }
+    reader.readAsDataURL(file);
+  }
 
   onSavePost() {
     console.log(this.post.id);
@@ -168,6 +182,9 @@ export class PostCreateComponent implements OnInit {
         }),
       jobEnd: new FormControl(null,
         {validators: [Validators.required, Validators.minLength(2)] ,
+        }),
+      image: new FormControl(null,
+        {validators: [Validators.required]
         })
     });
     this.route.paramMap.subscribe((paramMap: ParamMap) => {

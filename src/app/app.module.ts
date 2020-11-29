@@ -19,6 +19,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { SelectComponent } from './select/select.component';
 import { ChartjsFormComponent } from './chartjs-form/chartjs-form.component';
 import { DemoComponent } from './demo/demo.component';
+import { ChartsModule } from 'ng2-charts';
+import { VisualsComponent } from './visuals/visuals.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +38,16 @@ import { DemoComponent } from './demo/demo.component';
     PostListComponent,
     SelectComponent,
     ChartjsFormComponent,
-    DemoComponent
+    DemoComponent,
+    VisualsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

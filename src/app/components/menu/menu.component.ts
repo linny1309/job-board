@@ -14,13 +14,13 @@ export class MenuComponent implements OnInit {
   customMenu: string[];
 
   togglePage(n) {
+    console.log(n);
     var x;
     var pages: HTMLCollectionOf<Element> = document.getElementsByClassName("page");
     for(x = 0; x < pages.length; x++) {
       if(n != x) {
         document.getElementById("page"+x).style.visibility = "hidden";
-      }
-      else {
+      } else {
         document.getElementById("page"+x).style.visibility = "visible";
       }
     }

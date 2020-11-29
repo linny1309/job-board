@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Input()
-  customHeader: string[];
+  customHeader: string[] = ["Loading"];
 
   constructor() { }
   toggleMenu() {

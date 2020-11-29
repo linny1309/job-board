@@ -6,6 +6,7 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { DemoComponent } from './demo/demo.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
+import { VisualsComponent } from './visuals/visuals.component';
 
 const routes: Routes = [
   { path: '', component: DemoComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'jobs', component: JobsComponent},
   { path: 'documents', component: DocumentsComponent},
   { path: 'edit/:postId', component: EditComponent},
+  { path: 'visuals', component: VisualsComponent},
 ];
 
 @NgModule({

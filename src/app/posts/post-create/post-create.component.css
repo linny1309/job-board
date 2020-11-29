@@ -139,12 +139,36 @@ button {
 }
 
 .image-preview {
+  width: 100vw;
+  position: fixed;
+  background-color: rgb(82, 108, 255);
+  top: 100px;
+  left: 0;
   height: 5rem;
   margin: 1rem 0;
+  height: 300px;
+  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+}
+
+.image-preview-container {
+  width: 100vw;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
 }
 
 .image-preview img {
+  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   height: 100%;
+  width: 50vw;
+  border-radius:10px;
+}
+
+.image-confirm {
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
 }
 
 @media only screen and (max-width: 900px) {

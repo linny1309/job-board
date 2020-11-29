@@ -45,6 +45,7 @@ export class PostListComponent {
         this.isLoading = false;
         this.post = posts;
       });
+      document.getElementById("loaderTitle").innerHTML = "";
   }
 
   ngOnDestroy() {

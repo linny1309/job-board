@@ -51,10 +51,15 @@
     <br>
     <button class="post-create-button" type="button" (click)="filePicker.click()"><i class="material-icons">photo</i><span class="photo-span">Photo</span></button>
     <br>
-    <input type="file" style="visibility:hidden" (change)="onImagePicked($event)" #filePicker>
+    <input type="file" style="visibility:hidden" (change)="onImagePicked($event);" #filePicker>
     <br>
-    <div class="image-preview" formControlName="image" *ngIf="imgPreview !== '' && imgPreview">
-      <img [src]="imgPreview" [alt]="form.value.firstName">
+    <div class="image-preview" *ngIf="imgPreview !== '' && imgPreview">
+        <br>
+        <div class="image-preview-container">
+          <img [src]="imgPreview" [alt]="form.value.firstName" class="image-view">
+        </div>
+        <br>
+        <div class="image-confirm">Is this image good?</div>
     </div>
 </form>
 

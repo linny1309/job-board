@@ -1,0 +1,29 @@
+<app-header [customHeader]="[title]"></app-header>
+<app-menu [customMenu]="['Applicants by Decade','Applicants by Generation']"></app-menu>
+<div class="body" style="display: flex; justify-content: center;">
+  <div class="body-2">
+    <div class="chart-container page" id="page0" style="visibility: visible" *ngIf="!isLoading">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              [colors]="barChartColors">
+      </canvas>
+    </div>
+      <div class="chart-container page" id="page1" *ngIf="!isLoading">
+        <canvas baseChart
+                [datasets]="pieChartData"
+                [labels]="pieChartLabels"
+                [options]="pieChartOptions"
+                [legend]="barChartLegend"
+                [chartType]='pieChartType'
+                [colors]="barChartColors">
+        </canvas>
+      <br>
+    </div>
+    <br>
+  </div>
+  <app-loader *ngIf="isLoading"></app-loader>
+</div>

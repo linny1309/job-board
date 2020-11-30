@@ -81,6 +81,27 @@ export class PostsService {
     }>('http://localhost:3000/api/posts/' + id);
   }
 
+  getSQLPost() {
+    return this.http.get<{
+      id: string,
+      firstName: string,
+      lastName: string,
+      dob: Date,
+      state: string,
+      city: string,
+      zip: string,
+      institution: string,
+      degree: string,
+      gradYear: Date,
+      major: string,
+      minor: string,
+      org: string,
+      position: string,
+      jobStart: Date,
+      jobEnd: Date,
+    }>('http://localhost:8801/');
+  }
+
   //For adding a new post
 
   addPost(

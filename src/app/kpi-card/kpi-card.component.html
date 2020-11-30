@@ -1,4 +1,4 @@
 <div class="kpi-card">
   <span class="kpi-title">{{kpiTitle}}</span>
-  <span class="kpi-score">{{kpiScore}}</span>
+  <span class="kpi-score" *ngIf='kpiScore !== null' >{{kpiScore}}</span>
 </div>

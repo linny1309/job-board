@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, Output, ViewChild, HostListener } from '@angular/core';
 import { ChartsModule } from 'ng2-charts';
 import { Subscription } from 'rxjs';
 import { Color, Label } from 'ng2-charts';
@@ -9,7 +9,8 @@ import { PostsService } from "../posts/post.service";
 @Component({
   selector: 'app-visuals',
   templateUrl: './visuals.component.html',
-  styleUrls: ['./visuals.component.css']
+  styleUrls: ['./visuals.component.css'],
+  host: {'(document:click)': 'onChange($event)'}
 })
 export class VisualsComponent implements OnInit {
 
@@ -25,7 +26,11 @@ export class VisualsComponent implements OnInit {
   genCount = [0,0,0,0]
   @ViewChild('fullScreen') divRef;
   decadeMode: number;
-  dobGroup: number[];
+  dobGroup: number[] = [];
+  avg: number;
+  kpiScores: string[] = ['0','0'];
+  visNum: number = 0;
+  visName: string[] = ["Average Year of Applicants","Most Common Generation"]
 
   constructor(public postsService: PostsService) { }
 
@@ -69,6 +74,64 @@ export class VisualsComponent implements OnInit {
     },
   ];
 
+onChange(event) {
+  if((event.target.id).substring(4,5) == "0" || (event.target.id).substring(4,5) == "1")
+  this.visNum = (event.target.id).substring(4,5);
+}
+
+mode(array)
+{
+    if(array.length == 0)
+        return null;
+    var modeMap = {};
+    var maxEl = array[0], maxCount = 1;
+    for(var i = 0; i < array.length; i++)
+    {
+        var el = array[i];
+        if(modeMap[el] == null)
+            modeMap[el] = 1;
+        else
+            modeMap[el]++;
+        if(modeMap[el] > maxCount)
+        {
+            maxEl = el;
+            maxCount = modeMap[el];
+        }
+    }
+    return maxEl;
+}
+
+getGenerationMode(arr: number[]) {{
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    var max = arr[0];
+    var maxIndex = 0;
+
+    for (var i = 1; i < arr.length; i++) {
+      console.log("For"+arr[i]);
+        if (arr[i] > max) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+    console.log(maxIndex);
+    if(maxIndex == 0) {
+      return 'Baby Boomers';
+    }
+    else if(maxIndex == 1) {
+      return 'Gen X';
+    }
+    else if(maxIndex == 2) {
+      return 'Millennials';
+    }
+    else {
+      return 'Gen Z';
+    }
+}
+}
+
   getGeneration(year: number) {
     if(year < 1965) {
       this.genCount[0]++;
@@ -86,7 +149,6 @@ export class VisualsComponent implements OnInit {
       this.genCount[3]++;
       return 'Generation Z';
     }
-
   }
 
   openFullscreen() {
@@ -113,9 +175,17 @@ export class VisualsComponent implements OnInit {
       for(m = 0; m < this.dobCount.length; m++) {
         if(parseInt(arr[n]) >= this.barChartLabels[m] && parseInt(arr[n]) < this.barChartLabels[m+1])
           this.dobCount[m]++;
-          this.dobGroup.push(this.barChartLabels[m]);
-      }
+        }
+        this.dobGroup.push(this.dobSetInt[n]);
     }
+    console.log(this.dobGroup);
+    var total = 0;
+    for(var i = 0; i < this.dobGroup.length; i++) {
+        total += this.dobGroup[i];
+    }
+    this.avg = total / this.dobGroup.length;
+    this.avg = Math.trunc(this.avg);
+    this.kpiScores[0] = this.avg + '';
   }
 
   checkPosts(posts: Post[]) {
@@ -124,7 +194,9 @@ export class VisualsComponent implements OnInit {
       this.dobSet.push(posts[n].dob.toString());
       this.getGeneration(parseInt(this.dobSet[n]));
     }
+    console.log(this.mode(this.genCount));
     this.getDobInt(this.dobSet);
+    this.kpiScores[1] = this.getGenerationMode(this.genCount) + '';
   }
 
   ngOnInit() {
@@ -136,7 +208,6 @@ export class VisualsComponent implements OnInit {
         this.post = posts;
         this.checkPosts(this.post);
       });
-      this.openFullscreen();
   }
 
 }

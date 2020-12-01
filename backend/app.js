@@ -31,29 +31,6 @@ app.listen(8801, '127.0.0.1', function() {
   console.log("Server now listening on 8801");
 });
 
-connection.connect(function(error) {
-  if(!!error) {
-      console.log(error);
-  }
-  else {
-      console.log('Connected');
-      app.get('/', function(req, resp) {
-        connection.query('SELECT * FROM visual WHERE chart_type = \"gran_chart\"', function(error,rows,fields) {
-            if(!!error){
-                console.log('Error in the query');
-            }
-            else {
-                app.post("", (req, res, next) => {
-                  fields
-                })
-                console.log(fields);
-                data = rows;
-            }
-        })
-      });
-  }
-});
-
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));

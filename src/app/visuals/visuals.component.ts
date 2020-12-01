@@ -14,11 +14,12 @@ import { PostsService } from "../posts/post.service";
 })
 export class VisualsComponent implements OnInit {
 
+  private postsSub: Subscription;
+
   baseChart = "bar";
   post: Post[] = [];
   @Input() isDemo: boolean;
   title: string = "Data Visualizations";
-  private postsSub: Subscription;
   isLoading = false;
   dobSet: string[] = [];
   dobSetInt: number[] = [];

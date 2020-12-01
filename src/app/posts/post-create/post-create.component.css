@@ -159,8 +159,8 @@ button {
 
 .image-preview img {
   box-shadow: 3px 5px 3px rgb(21, 21, 21);
-  height: 100%;
-  width: 50vw;
+  height: 240px;
+  width: 240px;
   border-radius:10px;
 }
 

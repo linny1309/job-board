@@ -53,13 +53,16 @@
     <br>
     <input type="file" style="visibility:hidden" (change)="onImagePicked($event);" #filePicker>
     <br>
-    <div class="image-preview" *ngIf="imgPreview !== '' && imgPreview">
+    <div class="image-preview" *ngIf="imgPreview !== '' && imgPreview" id="imgPrev">
         <br>
         <div class="image-preview-container">
-          <img [src]="imgPreview" [alt]="form.value.firstName" class="image-view">
+          <img [src]="imgPreview" [alt]="form.value.firstName" class="image-view" formControlName="image">
         </div>
         <br>
-        <div class="image-confirm">Is this image good?</div>
+        <div class="image-confirm">Is this image good?
+          <span class="confirm-image" (click)="imageConfirm()">Yes</span>
+          <span class="confirm-image" (click)="filePicker.click()">No</span>
+        </div>
     </div>
 </form>
 

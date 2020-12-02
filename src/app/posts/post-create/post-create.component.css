@@ -146,8 +146,9 @@ button {
   left: 0;
   height: 5rem;
   margin: 1rem 0;
-  height: 300px;
+  height: 315px;
   box-shadow: 3px 5px 3px rgb(21, 21, 21);
+  transition: .2s;
 }
 
 .image-preview-container {
@@ -169,6 +170,15 @@ button {
   font-weight: bold;
   width: 100%;
   text-align: center;
+}
+
+.confirm-image {
+  background-color: rgb(0, 0, 75);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 900px) {

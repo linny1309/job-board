@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Output, OnInit } from "@angular/core";
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Post } from '../post.model';
-import { PostsService } from '../post.service';
 import { DatePipe } from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+
+import { Post } from '../post.model';
+import { PostsService } from '../post.service';
+import { mimeType } from './mime-type.validator'
 
 @Component({
   selector: 'app-post-create',
@@ -15,22 +17,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 export class PostCreateComponent implements OnInit {
 
   constructor(public postsService: PostsService, public route: ActivatedRoute, public datePipe: DatePipe) {}
-
-  enteredFirstName = '';
-  enteredLastName = '';
-  enteredDOB = '';
-  enteredState = '';
-  enteredCity = '';
-  enteredZip = '';
-  enteredInstitution = '';
-  enteredDegree = '';
-  enteredGradYear = '';
-  enteredMajor = '';
-  enteredMinor = '';
-  enteredOrg = '';
-  enteredPosition = '';
-  enteredYearStart = '';
-  enteredYearFinished = '';
 
   form: FormGroup;
   private mode = 'create';
@@ -57,8 +43,12 @@ export class PostCreateComponent implements OnInit {
     position: "",
     jobStart: new Date("09/01/1997"),
     jobEnd : new Date("01/01/2000"),
-    image: ""
   };
+
+  imageConfirm() {
+    document.getElementById("imgPrev").style.opacity = "0";
+    document.getElementById("imgPrev").style.visibility = "hidden";
+  }
 
   onImagePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
@@ -91,10 +81,9 @@ export class PostCreateComponent implements OnInit {
         major: this.form.value.major,
         minor: this.form.value.minor,
         org: this.form.value.org,
-        position: this.enteredPosition,
+        position: this.form.value.position,
         jobStart: this.form.value.jobStart,
         jobEnd: this.form.value.jobEnd,
-        image: this.form.value.image
       }
       this.postsService.addPost(
         this.form.value.firstName,
@@ -134,6 +123,7 @@ export class PostCreateComponent implements OnInit {
         this.form.value.position,
         this.form.value.jobStart,
         this.form.value.jobEnd,
+        this.form.value.image
       )
     }
     this.form.reset();
@@ -187,7 +177,7 @@ export class PostCreateComponent implements OnInit {
         {validators: [Validators.required, Validators.minLength(2)] ,
         }),
       image: new FormControl(null,
-        {validators: [Validators.required]
+        {validators: [Validators.required], asyncValidators: [mimeType]
         })
     });
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -215,7 +205,6 @@ export class PostCreateComponent implements OnInit {
             position: postData.position,
             jobStart: postData.jobStart,
             jobEnd: postData.jobEnd,
-            image: ""
           };
           this.form.setValue({
             firstName: this.post.firstName,
@@ -233,7 +222,6 @@ export class PostCreateComponent implements OnInit {
             position: this.post.position,
             jobStart: this.post.jobStart,
             jobEnd: this.post.jobEnd,
-            image: ""
           });
         });
       }

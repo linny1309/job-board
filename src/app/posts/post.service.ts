@@ -78,28 +78,8 @@ export class PostsService {
       position: string,
       jobStart: Date,
       jobEnd: Date,
+      image: any
     }>('http://localhost:3000/api/posts/' + id);
-  }
-
-  getSQLPost() {
-    return this.http.get<{
-      id: string,
-      firstName: string,
-      lastName: string,
-      dob: Date,
-      state: string,
-      city: string,
-      zip: string,
-      institution: string,
-      degree: string,
-      gradYear: Date,
-      major: string,
-      minor: string,
-      org: string,
-      position: string,
-      jobStart: Date,
-      jobEnd: Date,
-    }>('http://localhost:8801/');
   }
 
   //For adding a new post
@@ -120,31 +100,50 @@ export class PostsService {
     position: string,
     jobStart: Date,
     jobEnd: Date,
-    image: ""
+    image: File
     ) {
-
-    const post: Post = {
-      id: null,
-      firstName: firstName,
-      lastName: lastName,
-      dob: dob,
-      state: state,
-      city: city,
-      zip: zip,
-      institution: institution,
-      degree: degree,
-      gradYear: gradYear,
-      major: major,
-      minor: minor,
-      org: org,
-      position: position,
-      jobStart: jobStart,
-      jobEnd: jobEnd,
-      image: "",
-    };
+    const postData = new FormData();
+    postData.append("firstName", firstName);
+    postData.append("lastName", lastName);
+    var dobStr = (new Date(dob)).toUTCString();
+    postData.append("dob", dobStr);
+    postData.append("state", state);
+    postData.append("city", city);
+    postData.append("zip", zip);
+    postData.append("institution", institution);
+    postData.append("degree", degree);
+    var gradYearStr = (new Date(gradYear)).toUTCString();
+    postData.append("gradYear", gradYearStr);
+    postData.append("major", major);
+    postData.append("minor", minor);
+    postData.append("org", org);
+    postData.append("position", position);
+    var jobStartStr = (new Date(jobStart)).toUTCString();
+    postData.append("jobStart", jobStartStr);
+    var jobEndStr = (new Date(jobEnd)).toUTCString();
+    postData.append("jobEnd", jobEndStr);
+    postData.append("image", image, firstName+" "+lastName);
     this.http
-    .post<{message: string, postId: string}>('http://localhost:3000/api/posts', post)
+    .post<{message: string, postId: string}>('http://localhost:3000/api/posts', postData)
     .subscribe((responseData) => {
+      const post = {
+        id: responseData.postId,
+        firstName: firstName,
+        lastName: lastName,
+        dob: dob,
+        state: state,
+        city: city,
+        zip: zip,
+        institution: institution,
+        degree: degree,
+        gradYear: gradYear,
+        major: major,
+        minor: minor,
+        org: org,
+        position: position,
+        jobStart: jobStart,
+        jobEnd: jobEnd
+      }
       const id = responseData.postId;
       post.id = id;
       this.posts.push(post);
@@ -156,7 +155,7 @@ export class PostsService {
 
   //For updating an existing post
 
-  updatePost(id: string, firstName: string, lastName: string, dob: Date, state: string, city: string, zip: string, institution: string, degree: string, gradYear: Date, major: string, minor: string, org: string, position: string, jobStart: Date, jobEnd: Date) {
+  updatePost(id: string, firstName: string, lastName: string, dob: Date, state: string, city: string, zip: string, institution: string, degree: string, gradYear: Date, major: string, minor: string, org: string, position: string, jobStart: Date, jobEnd: Date, image:any) {
     const post: Post = {
       id: id,
       firstName: firstName,
@@ -174,7 +173,6 @@ export class PostsService {
       position: position,
       jobStart: jobStart,
       jobEnd: jobEnd,
-      image: ""
     }
     this.http
       .put("http://localhost:3000/api/posts/" + id, post)

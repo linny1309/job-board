@@ -31,7 +31,7 @@ export class VisualsComponent implements OnInit {
   avg: number;
   kpiScores: string[] = ['0','0'];
   visNum: number = 0;
-  visName: string[] = ["Average Year of Applicants","Most Common Generation"]
+  visName: string[] = ["Average Year of Birth of Applicants","Most Common Generation"]
 
   constructor(public postsService: PostsService) { }
 
@@ -56,7 +56,7 @@ export class VisualsComponent implements OnInit {
     responsive: true,
     title: {
       display: true,
-      text: 'Applicants by Decade',
+      text: 'Applicants Year of Birth by Decade',
       fontSize: 20
     }
   }

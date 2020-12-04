@@ -4,11 +4,19 @@
   <div *ngIf="post.length > 0 && !isLoading">
         <div *ngFor="let post of post; index as i; first as isFirst" class="post-container">
           <div>
-            <div class="post-list">
-              <div class="accordion" id="acc{{i}}"><div class="title-div">{{post.firstName + " " + post.lastName}}</div>
-                <i class="material-icons" id="accIcon{{i}}" (click)="onToggleAccordion(i)">expand_more</i>
-                <i class="material-icons" id="editIcon" [routerLink]="['/edit', post.id]">edit</i>
-                <i class="material-icons" id="deleteIcon" (click)="onDelete(post.id, post.firstName, post.lastName)">delete</i>
+            <div class="accordion">
+              <div class="post-image-div">
+                 <img class="post-image" [src]="post.imagePath" [alt]="post.firstName">
+              </div>
+              <div id="acc{{i}}"><div class="title-div">
+                <div class="full-name">{{post.firstName + " " + post.lastName}}</div>
+              </div>
+                <br>
+                <div class="button-group">
+                  <i class="material-icons acc-icons" id="accIcon{{i}}" (click)="onToggleAccordion(i)">expand_more</i>
+                  <i class="material-icons acc-icons" id="editIcon" [routerLink]="['/edit', post.id]">edit</i>
+                  <i class="material-icons acc-icons" id="deleteIcon" (click)="onDelete(post.id, post.firstName, post.lastName)">delete</i>
+                </div>
               </div>
             </div>
             <div class="post-list">

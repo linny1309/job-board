@@ -7,44 +7,59 @@
     <div class="post-create-header">
       <div class="personal-info">Enter your personal information</div>
     </div>
-    <input type="text" rows="6" class="post-create-title" formControlName="firstName" placeholder="Enter your first name" required>
+    <div class="label">Enter your first name</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="firstName" placeholder="First name" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="lastName" placeholder="Enter your last name" required>
+    <div class="label">Enter your last name</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="lastName" placeholder="Last name" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="dob" placeholder="Enter your DOB (MM/DD/YYY)" required>
+    <div class="label">Enter your date of birth</div>
+    <input type="date" rows="6" class="post-create-title-date post-create-title" formControlName="dob" placeholder="MM/DD/YYY" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="state" placeholder="Enter your state" required>
+    <div class="label">Enter your state</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="state" placeholder="State" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="city" placeholder="Enter your city" required>
+    <div class="label">Enter your city</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="city" placeholder="City" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="zip" placeholder="Enter your zip code" required>
+    <div class="label">Enter your zip code</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="zip" placeholder="Zip" required>
     <br>
     <!-- <textarea rows="6" ="enteredLetter" class="post-create-textarea" formControlName="" placeholder="Enter your post" required></textarea> !-->
     <br>
     <div class="post-create-header">
       <div class="post-create-user">Enter education history</div>
     </div>
-    <input type="text" rows="6" class="post-create-title" formControlName="institution" placeholder="Enter institution" required>
+    <div class="label">Enter your most relevent institution</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="institution" placeholder="Institution" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="degree" placeholder="Enter degree achieved" required>
+    <div class="label">Enter your degree earned</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="degree" placeholder="Degree" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="gradYear" placeholder="Enter year graduated" required>
+    <div class="label">Enter your graduation date</div>
+    <input type="date" rows="6" class="post-create-title-date post-create-title" formControlName="gradYear" placeholder="Graduation date" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="major" placeholder="Enter your major" required>
+    <div class="label">Enter your major</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="major" placeholder="Major" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="minor" placeholder="Enter your minor" required>
+    <div class="label">Enter your minor</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="minor" placeholder="Minor" required>
     <br>
     <br>
     <div class="post-create-header">
       <div class="post-create-user">Enter employment history</div>
     </div>
-    <input type="text" rows="6" class="post-create-title" formControlName="org" placeholder="Enter orginization" required>
+    <div class="label">Enter your most relevent organization</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="org" placeholder="Orginization" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="position" placeholder="Enter position" required>
+    <div class="label">Enter your position</div>
+    <input type="text" rows="6" class="post-create-title" formControlName="position" placeholder="Position" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="jobStart" placeholder="Enter year started" required>
+    <div class="label">Enter year started</div>
+    <input type="date" rows="6" class="post-create-title-date post-create-title" formControlName="jobStart" placeholder="Enter year started" required>
     <br>
-    <input type="text" rows="6" class="post-create-title" formControlName="jobEnd" placeholder="Enter year ended" required>
+    <div class="label">Enter year ended</div>
+    <input type="date" rows="6" class="post-create-title-date post-create-title" formControlName="jobEnd" placeholder="Enter year ended" required>
     <br>
     <br>
     <input type="submit" class="button" (click)="onSavePost()" class="post-create-button" value="Submit">
@@ -56,7 +71,7 @@
     <div class="image-preview" *ngIf="imgPreview !== '' && imgPreview" id="imgPrev">
         <br>
         <div class="image-preview-container">
-          <img [src]="imgPreview" [alt]="form.value.firstName" class="image-view" formControlName="image">
+          <img [src]="imgPreview" [alt]="form.value.firstName" class="image-view">
         </div>
         <br>
         <div class="image-confirm">Is this image good?

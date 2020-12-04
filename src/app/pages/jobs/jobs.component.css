@@ -10,6 +10,14 @@
   font-size: 20px;
   font-weight: bold;
   color: darkblue;
+  left: 0;
+}
+
+.page-title-text {
+  background-color: white;
+  color: darkblue;
+  padding: 8px;
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 300px) {
@@ -33,7 +41,6 @@
     outline: none;
     background-color: darkblue;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     padding-left: 10px;
     padding-right: 10px;
     display: block;
@@ -48,7 +55,6 @@
     color: lightgray;
     font-size: 20px;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     padding: 10px;
     display: none;
   }
@@ -61,7 +67,6 @@
     color: lightgray;
     font-size: 20px;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     padding: 10px;
     z-index: 30;
     text-align: center;
@@ -81,7 +86,6 @@
     width: fit-content;
     padding: 5px;
     border-radius: 10px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
   }
 
   i {

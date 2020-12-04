@@ -16,6 +16,13 @@
   left: 0;
 }
 
+.page-title-text {
+  background-color: white;
+  color: darkblue;
+  padding: 8px;
+  border-radius: 10px;
+}
+
 #page1 {
   visibility: hidden;
   display: flex;

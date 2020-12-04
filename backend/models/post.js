@@ -16,6 +16,7 @@ const postSchema = mongoose.Schema({
   position: {type: String, required: true },
   jobStart: {type: Date, require: true },
   jobEnd: {type: Date, require: true },
+  imagePath: { type: String, required: true }
 })
 
 module.exports = mongoose.model('Post', postSchema);

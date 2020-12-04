@@ -42,6 +42,7 @@ export class PostsService {
             position: post.position,
             jobStart: post.jobStart,
             jobEnd: post.jobEnd,
+            imagePath: post.imagePath
           };
         });
       }))
@@ -78,7 +79,7 @@ export class PostsService {
       position: string,
       jobStart: Date,
       jobEnd: Date,
-      image: any
+      imagePath: string
     }>('http://localhost:3000/api/posts/' + id);
   }
 
@@ -124,10 +125,10 @@ export class PostsService {
     postData.append("jobEnd", jobEndStr);
     postData.append("image", image, firstName+" "+lastName);
     this.http
-    .post<{message: string, postId: string}>('http://localhost:3000/api/posts', postData)
+    .post<{message: string, post: Post}>('http://localhost:3000/api/posts', postData)
     .subscribe((responseData) => {
-      const post = {
-        id: responseData.postId,
+      const post: Post = {
+        id: responseData.post.id,
         firstName: firstName,
         lastName: lastName,
         dob: dob,
@@ -142,10 +143,10 @@ export class PostsService {
         org: org,
         position: position,
         jobStart: jobStart,
-        jobEnd: jobEnd
+        jobEnd: jobEnd,
+        imagePath: responseData.post.imagePath
       }
-      const id = responseData.postId;
-      post.id = id;
+      const id = responseData.post.id;
       this.posts.push(post);
       this.postsUpdated.next([...this.posts]);
       alert("You have successfully created your profile.");
@@ -155,7 +156,7 @@ export class PostsService {
 
   //For updating an existing post
 
-  updatePost(id: string, firstName: string, lastName: string, dob: Date, state: string, city: string, zip: string, institution: string, degree: string, gradYear: Date, major: string, minor: string, org: string, position: string, jobStart: Date, jobEnd: Date, image:any) {
+  updatePost(id: string, firstName: string, lastName: string, dob: Date, state: string, city: string, zip: string, institution: string, degree: string, gradYear: Date, major: string, minor: string, org: string, position: string, jobStart: Date, jobEnd: Date, imagePath: null) {
     const post: Post = {
       id: id,
       firstName: firstName,
@@ -173,6 +174,7 @@ export class PostsService {
       position: position,
       jobStart: jobStart,
       jobEnd: jobEnd,
+      imagePath: null
     }
     this.http
       .put("http://localhost:3000/api/posts/" + id, post)

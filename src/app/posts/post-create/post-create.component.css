@@ -18,7 +18,7 @@ app-loader {
   width: 615px;
   background-color: darkblue;
   border-radius: 5px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
   margin-bottom: 10px;
   padding: 5px;
   color: lightgray;
@@ -30,7 +30,7 @@ app-loader {
   width: 615px;
   background-color: blue;
   border-radius: 5px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
   margin-bottom: 10px;
   padding: 5px;
   color: rgb(255, 0, 0);
@@ -39,31 +39,35 @@ app-loader {
 }
 
 .post-create-user {
+  font-weight: bold;
   width: fit-content;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   background-color: rgb(22, 22, 118);
   border-radius: 5px;
   padding: 5px;
 }
 
 .post-create-title {
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
   background-color: blue;
   border-radius: 5px;
   padding: 5px;
 }
 
+.post-create-title-date {
+  text-transform: uppercase;
+}
+
 .personal-info {
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+  font-weight: bold;
   background-color: rgb(22, 22, 118);
   border-radius: 5px;
   padding: 5px;
-  width: 300px;
+  width: fit-content;
 }
 
 .post-create-textarea {
   background-color: rgb(80, 80, 80);
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
   resize: none;
   border-radius: 5px;
   border: none;
@@ -76,7 +80,7 @@ app-loader {
 
 .post-create-title {
   background-color: rgb(67, 93, 240);
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
   resize: none;
   border-radius: 5px;
   border: none;
@@ -101,7 +105,7 @@ app-loader {
 .post-create-button {
   border: none;
   border-radius: 5px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
   background-color: rgb(22, 22, 118);
   font-size: 19px;
   font-weight: bold;
@@ -117,6 +121,10 @@ app-loader {
 }
 
 button {
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
 
 /* Change the white to any color ;) */
@@ -136,6 +144,8 @@ button {
 }
 
 .material-icons {
+  position: relative;
+  padding: 5px;
 }
 
 .image-preview {
@@ -147,7 +157,7 @@ button {
   height: 5rem;
   margin: 1rem 0;
   height: 315px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
   transition: .2s;
 }
 
@@ -159,7 +169,7 @@ button {
 }
 
 .image-preview img {
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
   height: 240px;
   width: 240px;
   border-radius:10px;
@@ -177,8 +187,19 @@ button {
   border-radius: 10px;
   padding: 5px;
   margin: 5px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   cursor: pointer;
+}
+
+.label {
+  border-radius: 5px;
+  color: rgb(0, 0, 99);
+  font-weight: bold;
+  width: 605px;
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 5px;
+
 }
 
 @media only screen and (max-width: 900px) {
@@ -198,7 +219,7 @@ button {
     width: 415px;
     background-color: darkblue;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     margin-bottom: 10px;
     padding: 5px;
     color: lightgray;
@@ -210,7 +231,7 @@ button {
     width: 405px;
     background-color: blue;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     margin-bottom: 10px;
     padding: 5px;
     color: lightgray;
@@ -219,31 +240,31 @@ button {
   }
 
   .post-create-user {
+    font-weight: bold;
     width: fit-content;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     background-color: rgb(22, 22, 118);
     border-radius: 5px;
     padding: 5px;
   }
 
   .post-create-title {
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     background-color: blue;
     border-radius: 5px;
     padding: 5px;
   }
 
   .personal-info {
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     background-color: rgb(22, 22, 118);
     border-radius: 5px;
     padding: 5px;
-    width: 300px;
+    padding: 5px;
+    width: fit-content;
   }
 
   .post-create-textarea {
     background-color: rgb(80, 80, 80);
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     resize: none;
     border-radius: 5px;
     border: none;
@@ -256,7 +277,7 @@ button {
 
   .post-create-title {
     background-color: rgb(67, 93, 240);
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     resize: none;
     border-radius: 5px;
     border: none;
@@ -281,7 +302,7 @@ button {
   .post-create-button {
     border: none;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     background-color: rgb(22, 22, 118);
     font-size: 20px;
     font-weight: bold;
@@ -303,6 +324,10 @@ button {
       color: white;
       transition: background-color 5000s ease-in-out 0s;
       -webkit-text-fill-color: #fff !important;
+  }
+
+  .label {
+    width: 405px;
   }
 }
 
@@ -323,7 +348,7 @@ button {
     width: 315px;
     background-color: darkblue;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     margin-bottom: 10px;
     padding: 5px;
     color: lightgray;
@@ -335,7 +360,7 @@ button {
     width: 315px;
     background-color: blue;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     margin-bottom: 10px;
     padding: 5px;
     color: lightgray;
@@ -344,31 +369,30 @@ button {
   }
 
   .post-create-user {
+    font-weight: bold;
     width: fit-content;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     background-color: rgb(22, 22, 118);
     border-radius: 5px;
     padding: 5px;
   }
 
   .post-create-title {
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     background-color: blue;
     border-radius: 5px;
     padding: 5px;
   }
 
   .personal-info {
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     background-color: rgb(22, 22, 118);
     border-radius: 5px;
     padding: 5px;
-    width: 300px;
+    width: fit-content;
   }
 
   .post-create-textarea {
     background-color: rgb(80, 80, 80);
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     resize: none;
     border-radius: 5px;
     border: none;
@@ -381,9 +405,8 @@ button {
 
   .post-create-title {
     background-color: rgb(67, 93, 240);
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     resize: none;
-    border-radius: 5px;
     border: none;
     color:   rgb(255, 255, 255);
     font-size: 16px;
@@ -406,7 +429,7 @@ button {
   .post-create-button {
     border: none;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
+
     background-color: rgb(22, 22, 118);
     font-size: 20px;
     font-weight: bold;
@@ -428,6 +451,10 @@ button {
       color: white;
       transition: background-color 5000s ease-in-out 0s;
       -webkit-text-fill-color: #fff !important;
+  }
+
+  .label {
+    width: 305px;
   }
 }
 

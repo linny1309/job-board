@@ -10,6 +10,14 @@
   font-size: 20px;
   font-weight: bold;
   color: darkblue;
+  left: 0;
+}
+
+.page-title-text {
+  background-color: white;
+  color: darkblue;
+  padding: 8px;
+  border-radius: 10px;
 }
 
 #page1 {

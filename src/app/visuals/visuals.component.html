@@ -1,5 +1,5 @@
 <app-header [customHeader]="[title]"></app-header>
-<app-menu [customMenu]="['Applicants by Decade','Applicants by Generation']"></app-menu>
+<app-menu [customMenu]="['Applicants by Decade','Applicants by Generation']" [customIcons]="['bar_chart','pie_chart']"></app-menu>
 <div class="body" style="display: flex; justify-content: center;">
   <div class="body-2">
     <app-kpi-card [kpiTitle]=visName[visNum] [kpiScore]="kpiScores[visNum]"></app-kpi-card>

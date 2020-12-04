@@ -1,8 +1,8 @@
 <div class="body">
   <app-header [customHeader]="['Edit']"></app-header>
-  <app-menu [customMenu]="['Edit']"></app-menu>
+  <app-menu [customMenu]="['Edit']" [customIcons]="['edit']"></app-menu>
   <span class="page" id="page0">
-    <span class="page-title">Edit</span>
+    <span class="page-title"><span class="page-title-text">Edit</span></span>
     <app-post-create (postCreated)="onPostAdded($event)" class="app-post-create"></app-post-create>
   </span>
 </div>

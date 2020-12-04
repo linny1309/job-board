@@ -12,6 +12,8 @@ export class MenuComponent implements OnInit {
 
   @Input()
   customMenu: string[];
+  @Input()
+  customIcons: string[];
 
   @Output()
   menuValue: number;

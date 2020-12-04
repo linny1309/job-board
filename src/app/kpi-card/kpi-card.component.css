@@ -4,6 +4,10 @@
   top: 5px;
   margin-left: 10px;
   font-size: 25px;
+  background-color: rgb(22, 22, 118);
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
 .kpi-score {
@@ -16,5 +20,15 @@
   background-color: white;
   border-radius: 10px;
   padding: 5px;
-  box-shadow: 5px 5px 3px rgb(31, 31, 31);
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 900px) {
+  .kpi-title {
+    font-size: 16px;
+  }
+  .kpi-score {
+    font-size: 19px;
+  }
+
 }

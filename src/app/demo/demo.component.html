@@ -1,8 +1,8 @@
 <div class="body">
   <app-header [customHeader]="['Demo']"></app-header>
-  <app-menu [customMenu]="['Registration','Login','Loader','Jobs','Documents']"></app-menu>
+  <app-menu [customMenu]="['Registration','Login','Loader','Jobs','Documents']" [customIcons]="['create','login','cached','work','folder']"></app-menu>
   <span class="page" id="page0">
-    <span class="page-title">Registration</span>
+    <span class="page-title"><span class="page-title-text">Registration</span></span>
     <app-post-create (postCreated)="onPostAdded($event)" class="app-post-create"></app-post-create>
     <br>
   </span>

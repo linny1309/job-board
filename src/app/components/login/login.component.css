@@ -13,7 +13,6 @@
   width: 615px;
   background-color: darkblue;
   border-radius: 5px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   margin-bottom: 10px;
   padding: 5px;
   color: lightgray;
@@ -25,7 +24,6 @@
   width: 615px;
   background-color: blue;
   border-radius: 5px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   margin-bottom: 10px;
   padding: 5px;
   color: lightgray;
@@ -35,21 +33,18 @@
 
 .post-create-user {
   width: fit-content;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   background-color: rgb(22, 22, 118);
   border-radius: 5px;
   padding: 5px;
 }
 
 .post-create-title {
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   background-color: blue;
   border-radius: 5px;
   padding: 5px;
 }
 
 .personal-info {
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   background-color: rgb(22, 22, 118);
   border-radius: 5px;
   padding: 5px;
@@ -58,7 +53,6 @@
 
 .post-create-textarea {
   background-color: rgb(80, 80, 80);
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   resize: none;
   border-radius: 5px;
   border: none;
@@ -71,7 +65,6 @@
 
 .post-create-title {
   background-color: rgb(67, 93, 240);
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   resize: none;
   border-radius: 5px;
   border: none;
@@ -136,7 +129,6 @@ input:-webkit-autofill:active  {
     width: 315px;
     background-color: darkblue;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     margin-bottom: 10px;
     padding: 5px;
     color: lightgray;
@@ -148,7 +140,6 @@ input:-webkit-autofill:active  {
     width: 315px;
     background-color: blue;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     margin-bottom: 10px;
     padding: 5px;
     color: lightgray;
@@ -158,14 +149,12 @@ input:-webkit-autofill:active  {
 
   .post-create-user {
     width: fit-content;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     background-color: rgb(22, 22, 118);
     border-radius: 5px;
     padding: 5px;
   }
 
   .post-create-title {
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     background-color: blue;
     border-radius: 5px;
     padding: 5px;
@@ -173,7 +162,6 @@ input:-webkit-autofill:active  {
   }
 
   .personal-info {
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     background-color: rgb(22, 22, 118);
     border-radius: 5px;
     padding: 5px;
@@ -182,7 +170,6 @@ input:-webkit-autofill:active  {
 
   .post-create-textarea {
     background-color: rgb(80, 80, 80);
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     resize: none;
     border-radius: 5px;
     border: none;
@@ -195,7 +182,6 @@ input:-webkit-autofill:active  {
 
   .post-create-title {
     background-color: rgb(67, 93, 240);
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     resize: none;
     border-radius: 5px;
     border: none;
@@ -220,7 +206,6 @@ input:-webkit-autofill:active  {
   .post-create-button {
     border: none;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     background-color: rgb(22, 22, 118);
     font-size: 20px;
     font-weight: bold;

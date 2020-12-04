@@ -43,6 +43,7 @@ export class PostCreateComponent implements OnInit {
     position: "",
     jobStart: new Date("09/01/1997"),
     jobEnd : new Date("01/01/2000"),
+    imagePath: null
   };
 
   imageConfirm() {
@@ -84,6 +85,7 @@ export class PostCreateComponent implements OnInit {
         position: this.form.value.position,
         jobStart: this.form.value.jobStart,
         jobEnd: this.form.value.jobEnd,
+        imagePath: null
       }
       this.postsService.addPost(
         this.form.value.firstName,
@@ -205,6 +207,7 @@ export class PostCreateComponent implements OnInit {
             position: postData.position,
             jobStart: postData.jobStart,
             jobEnd: postData.jobEnd,
+            imagePath: null
           };
           this.form.setValue({
             firstName: this.post.firstName,

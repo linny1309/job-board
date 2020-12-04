@@ -42,7 +42,7 @@ export class VisualsComponent implements OnInit {
       display: true,
       text: 'Applicants by Generation',
       fontSize: 20
-    }
+    },
   }
   public pieChartLabels = ['Baby Boomers','Generation X','Millennials','Generation Z'];
   public pieChartType = 'pie';
@@ -58,6 +58,18 @@ export class VisualsComponent implements OnInit {
       display: true,
       text: 'Applicants Year of Birth by Decade',
       fontSize: 20
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          fontSize: 17
+        }
+      }],
+      xAxes: [{
+        ticks: {
+          fontSize: 17
+        }
+      }],
     }
   }
   public barChartLabels = [1890,1900,1910,1920,1930,1940,1950,1960,1970,1980,1990,2000,2010,2020];

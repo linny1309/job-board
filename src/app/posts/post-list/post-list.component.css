@@ -24,11 +24,11 @@
   padding-bottom: 9px;
   width: 605px;
   border: none;
+  display: inline;
   text-align: left;
   outline: none;
   background-color: darkblue;
   border-radius: 5px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   padding-left: 10px;
   padding-right: 10px;
   display: block;
@@ -43,7 +43,6 @@
   color: lightgray;
   font-size: 20px;
   border-radius: 5px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   padding: 10px;
   display: none;
 }
@@ -56,7 +55,6 @@
   color: lightgray;
   font-size: 20px;
   border-radius: 5px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
   padding: 10px;
   z-index: 30;
   text-align: center;
@@ -73,11 +71,10 @@
 }
 
 .title-div {
-  background-color: rgb(22, 22, 118);
-  width: fit-content;
+  margin-left: 50px;
+
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 3px 5px 3px rgb(21, 21, 21);
 }
 
 i {
@@ -93,6 +90,39 @@ i {
 a {
   color: white;
 }
+
+.post-image {
+  margin-top: -5px;
+  margin-left: -5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  position: relative;
+  display: inline;
+}
+
+.full-name {
+  position: relative;
+  margin-top: -52px;
+  background-color: rgb(22, 22, 118);
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.button-group {
+  margin-top: -50px;
+}
+
+  .material-icons {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
 
 @media only screen and (max-width: 900px) {
   .accordion {
@@ -110,7 +140,6 @@ a {
     outline: none;
     background-color: darkblue;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     padding-left: 10px;
     padding-right: 10px;
     display: block;
@@ -125,7 +154,6 @@ a {
     color: lightgray;
     font-size: 16px;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     padding: 10px;
     display: none;
   }
@@ -138,7 +166,6 @@ a {
     color: lightgray;
     font-size: 20px;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     padding: 10px;
     z-index: 30;
     text-align: center;
@@ -159,7 +186,6 @@ a {
     width: fit-content;
     padding: 5px;
     border-radius: 10px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
   }
 
   i {
@@ -193,7 +219,6 @@ a {
     outline: none;
     background-color: darkblue;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     padding-left: 10px;
     padding-right: 10px;
     display: block;
@@ -207,8 +232,6 @@ a {
     overflow: hidden;
     color: lightgray;
     font-size: 15px;
-    border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     padding: 10px;
     display: none;
   }
@@ -221,7 +244,6 @@ a {
     color: lightgray;
     font-size: 20px;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
     padding: 10px;
     z-index: 30;
     text-align: center;
@@ -242,24 +264,12 @@ a {
     width: fit-content;
     padding: 5px;
     border-radius: 10px;
-    box-shadow: 3px 5px 3px rgb(21, 21, 21);
   }
 
   i {
     margin: 7px;
     margin-top: -25px;
     float: right;
-  }
-
-  .material-icons {
-    margin-top: -20px;
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Old versions of Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
   }
 
   .material-icons:hover {

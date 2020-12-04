@@ -20,8 +20,8 @@
   color: rgb(255, 255, 255);
   font-size: 20px;
   cursor: pointer;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   width: 605px;
   border: none;
   display: inline;
@@ -93,7 +93,6 @@ a {
 
 .post-image {
   margin-top: -5px;
-  margin-left: -5px;
   width: 50px;
   height: 50px;
   border-radius: 10px;
@@ -104,6 +103,7 @@ a {
 .full-name {
   position: relative;
   margin-top: -52px;
+  margin-left: 5px;
   background-color: rgb(22, 22, 118);
   width: fit-content;
   padding: 5px;
@@ -182,7 +182,6 @@ a {
   }
 
   .title-div {
-    background-color: rgb(22, 22, 118);
     width: fit-content;
     padding: 5px;
     border-radius: 10px;
@@ -211,8 +210,8 @@ a {
     color: rgb(255, 255, 255);
     font-size: 16px;
     cursor: pointer;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     width: 275px;
     border: none;
     text-align: left;
@@ -260,7 +259,6 @@ a {
   }
 
   .title-div {
-    background-color: rgb(22, 22, 118);
     width: fit-content;
     padding: 5px;
     border-radius: 10px;
@@ -278,5 +276,28 @@ a {
 
   a {
     color: white;
+  }
+
+  .post-image {
+    margin-top: 1px;
+    width: 39px;
+    height: 39px;
+    border-radius: 10px;
+    position: relative;
+    display: inline;
+  }
+
+  .button-group {
+    margin-top: -40px;
+  }
+
+  .full-name {
+    position: relative;
+    margin-top: -44px;
+    margin-left: -5px;
+    background-color: rgb(22, 22, 118);
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
   }
 }

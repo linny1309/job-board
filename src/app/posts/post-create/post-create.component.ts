@@ -23,6 +23,7 @@ export class PostCreateComponent implements OnInit {
   private postId: string;
   isLoading = false;
   imgPreview: string;
+  pathEnd;
 
   @Output() postCreated = new EventEmitter<Post>();
 
@@ -225,6 +226,7 @@ export class PostCreateComponent implements OnInit {
             position: this.post.position,
             jobStart: this.post.jobStart,
             jobEnd: this.post.jobEnd,
+            image: this.post.imagePath
           });
         });
       }

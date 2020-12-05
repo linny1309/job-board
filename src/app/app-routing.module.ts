@@ -7,9 +7,11 @@ import { DemoComponent } from './demo/demo.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { VisualsComponent } from './visuals/visuals.component';
+import { LogoComponent } from './logo/logo.component'
 
 const routes: Routes = [
   { path: '', component: DemoComponent},
+  { path: 'logo', component: LogoComponent},
   { path: 'registration', component: RegistrationComponent},
   { path: 'jobs', component: JobsComponent},
   { path: 'documents', component: DocumentsComponent},

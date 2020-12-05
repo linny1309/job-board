@@ -17,6 +17,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.getElementById("appLogo").style.marginLeft = "5.5px";
   }
 
 }

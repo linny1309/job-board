@@ -17,6 +17,8 @@ export class EditComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.getElementById("appLogo").style.marginLeft = "5.5px";
+    document.getElementById("appLogo").style.marginTop = "100px";
   }
 
 }

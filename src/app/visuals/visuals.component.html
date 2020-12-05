@@ -27,6 +27,13 @@
     <br>
   </div>
 </div>
+<div class="chart-loading-container-div" *ngIf="isLoading">
+  <div class="chart-loading-container">
+  </div>
+</div>
+<div class="app-logo">
+  <app-logo></app-logo>
+</div>
 <div class="loading-container">
   <app-loader *ngIf="isLoading"></app-loader>
 </div>

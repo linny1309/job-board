@@ -5,7 +5,7 @@
 .page-title {
   position: absolute;
   top: 65px;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
@@ -24,7 +24,6 @@
   .page-title {
     position: absolute;
     top: 65px;
-    width: 100%;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -37,7 +36,6 @@
   .page-title {
     position: absolute;
     top: 65px;
-    width: 100%;
     text-align: center;
     font-size: 17px;
     font-weight: bold;

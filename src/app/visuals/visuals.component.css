@@ -22,6 +22,24 @@
   justify-content: center;
 }
 
+.chart-loading-container {
+    position: absolute;
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    height: 35vw;
+}
+
+.chart-loading-container-div {
+  position: absolute;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;;
+}
+
 canvas {
   background-color: rgb(252, 252, 255);
   border-radius: 10px;
@@ -37,6 +55,7 @@ canvas {
   display: flex;
   justify-content: center;
   overflow: hidden;
+  height: 500px;
 }
 
 app-kpi-card {
@@ -46,3 +65,46 @@ app-kpi-card {
   background-color:rgb(0, 0, 133);
   border-radius: 10px;
 }
+
+app-logo {
+  position: fixed;
+  bottom: 80px;
+  right: 80px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+}
+
+app-loader {
+  margin-top: -150px;
+}
+
+.app-logo {
+  width: 20px;
+  height: 20px;
+}
+
+@media only screen and (max-width: 1500px) {
+  app-loader {
+    margin-top: -150px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  app-loader {
+    margin-top: -180px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  app-loader {
+    margin-top: -200px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  app-loader {
+    margin-top: -250px;
+  }
+}
+

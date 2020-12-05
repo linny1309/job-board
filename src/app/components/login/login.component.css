@@ -1,7 +1,10 @@
 .body {
+  position: fixed;
   display: flex;
   justify-content: center;
   width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .post-create-div {

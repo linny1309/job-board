@@ -22,6 +22,7 @@ import { DemoComponent } from './demo/demo.component';
 import { ChartsModule } from 'ng2-charts';
 import { VisualsComponent } from './visuals/visuals.component';
 import { KpiCardComponent } from './kpi-card/kpi-card.component';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { KpiCardComponent } from './kpi-card/kpi-card.component';
     ChartjsFormComponent,
     DemoComponent,
     VisualsComponent,
-    KpiCardComponent
+    KpiCardComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,10 @@ export class PostListComponent {
   @Input() post: Post[] = [];
   @Input() isDemo: boolean;
   private postsSub: Subscription;
+  dob: string[] = [];
+  gradYear: string[] = [];
+  jobStart: string[] = [];
+  jobEnd: string[] = [];
   isLoading = false;
 
   onToggleAccordion(i) {
@@ -37,6 +41,18 @@ export class PostListComponent {
     }
   }
 
+  formatDate(date: Date, dateType: string) {
+    if(dateType === "dob") {
+      this.dob.push(date.toString().substring(0,10));
+    } else if(dateType === "gradYear") {
+      this.gradYear.push(date.toString().substring(0,10));
+    } else if(dateType === "jobStart") {
+      this.jobStart.push(date.toString().substring(0,10));
+    } else {
+      this.jobEnd.push(date.toString().substring(0,10));
+    }
+  }
+
   ngOnInit() {
     this.isLoading = true;
     this.postsService.getPosts();
@@ -44,7 +60,13 @@ export class PostListComponent {
       .subscribe((posts: Post[]) => {
         this.isLoading = false;
         this.post = posts;
-      });
+        this.post.forEach((post, i) => {
+          this.formatDate(this.post[i].dob, "dob");
+          this.formatDate(this.post[i].gradYear, "gradYear");
+          this.formatDate(this.post[i].jobStart, "jobStart");
+          this.formatDate(this.post[i].jobEnd, "jobEnd");
+        })
+      })
   }
 
   ngOnDestroy() {

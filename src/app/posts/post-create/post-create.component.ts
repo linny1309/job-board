@@ -188,9 +188,11 @@ export class PostCreateComponent implements OnInit {
         this.mode = 'edit';
         this.postId = paramMap.get('postId');
         this.isLoading = true;
+        document.getElementById("appLogo").style.visibility = "hidden";
         console.log(this.postId);
         this.postsService.getPost(this.postId).subscribe(postData => {
           this.isLoading = false;
+          document.getElementById("appLogo").style.visibility = "visible";
           this.post = {
             id: this.postId,
             firstName: postData.firstName,
@@ -208,7 +210,7 @@ export class PostCreateComponent implements OnInit {
             position: postData.position,
             jobStart: postData.jobStart,
             jobEnd: postData.jobEnd,
-            imagePath: null
+            imagePath: postData.imagePath
           };
           this.form.setValue({
             firstName: this.post.firstName,

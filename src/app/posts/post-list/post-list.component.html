@@ -2,7 +2,9 @@
   <div class="app-loader-container">
     <app-loader *ngIf="isLoading && !isDemo" ></app-loader>
   </div>
-  <span class="error-span" *ngIf="post.length == 0 && isDemo">The application is empty or not connected.</span>
+  <div>
+    <span class="error-span" *ngIf="post.length == 0 && isDemo">The application is empty or not connected.</span>
+  </div>
   <div *ngIf="post.length > 0 && !isLoading">
         <div *ngFor="let post of post; index as i; first as isFirst" class="post-container">
           <div class="user-list">
@@ -25,46 +27,32 @@
             <div class="panel" id="panel{{i}}">
               <span class="category-title">First name</span>
               <span class="data-title">{{post.firstName}}</span>
-              <br>
               <span class="category-title">Last name</span>
               <span class="data-title">{{post.lastName}}</span>
-              <br>
               <span class="category-title">Date of birth</span>
               <span class="data-title">{{dob[i]}}</span>
-              <br>
               <span class="category-title">State</span>
               <span class="data-title">{{post.state}}</span>
-              <br>
               <span class="category-title">City</span>
               <span class="data-title">{{post.city}}</span>
-              <br>
               <span class="category-title">Zip Code</span>
               <span class="data-title">{{post.zip}}</span>
-              <br>
               <span class="category-title">Educational Institution</span>
               <span class="data-title">{{post.institution}}</span>
-              <br>
               <span class="category-title">Degree Achieved</span>
               <span class="data-title">{{post.degree}}</span>
-              <br>
               <span class="category-title">Grad Year</span>
               <span class="data-title">{{gradYear[i]}}</span>
-              <br>
               <span class="category-title">Major</span>
               <span class="data-title">{{post.major}}</span>
-              <br>
               <span class="category-title">Minor</span>
               <span class="data-title">{{post.minor}}</span>
-              <br>
               <span class="category-title">Orginization</span>
               <span class="data-title">{{post.org}}</span>
-              <br>
               <span class="category-title">Position</span>
               <span class="data-title">{{post.position}}</span>
-              <br>
               <span class="category-title">Year Started</span>
               <span class="data-title">{{jobStart[i]}}</span>
-              <br>
               <span class="category-title">Year Ended</span>
               <span class="data-title">{{jobEnd[i]}}</span>
               <br>

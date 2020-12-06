@@ -8,6 +8,7 @@
     height: 90%;
     border-radius: 10px;
     display: flex;
+    padding-right: 10px;
     justify-content: center;
   }
 
@@ -27,6 +28,10 @@
   }
 
   .feature-loader {
+    display: block;
+    margin-left: 50px;
+    position: fixed;
+    top: 100px;
     visibility: visible;
   }
 }

@@ -39,6 +39,7 @@ app-loader {
 }
 
 .panel {
+  border:3px solid rgb(34, 56, 222);
   margin-top: 10px;
   width: 605px;
   height: fit-content;
@@ -251,8 +252,19 @@ a {
   }
 
   .button-group {
-    margin-top: -50px;
+    margin-top: -51px;
+    margin-left: -50px;
   }
+
+  .post-image {
+    margin-top: -5px;
+    width: 39px;
+    height: 39px;
+    border-radius: 10px;
+    position: relative;
+    display: inline;
+  }
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -278,7 +290,7 @@ a {
 
   .panel {
     margin-top: 10px;
-    width: 270px;
+    width: 275px;
     height: fit-content;
     background-color: rgb(67, 93, 240);
     overflow: hidden;
@@ -369,6 +381,24 @@ a {
   .data-title {
     font-size: 15px;
   }
+
+  .button-group {
+    margin-top: -52px;
+    margin-left: -50px;
+  }
+
+    .button-group {
+    margin-top: -51px;
+    margin-left: -50px;
+  }
+
+  .post-image {
+    margin-top: -5px;
+    width: 39px;
+    height: 39px;
+    border-radius: 10px;
+    position: relative;
+}
 }
 
 /*Min width*/
@@ -388,6 +418,15 @@ a {
 
   .panel {
     position: relative;
+  }
+
+  .error-span {
+    font-size: 16px;
+    color: rgb(0, 0, 72);
+    font-weight: bold;
+    margin-left: 5%;
+    width: 605px;
+    text-align: center;
   }
 
 }

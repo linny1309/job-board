@@ -1,6 +1,6 @@
 <div class="body">
   <app-header [customHeader]="['Demo']"></app-header>
-  <app-menu [customMenu]="['Registration','Login','Loader','Jobs','Documents']" [customIcons]="['create','login','cached','work','folder']"></app-menu>
+  <app-menu [customMenu]="['Registration','Login','Loader','Jobs','Documents','Visuals']" [customIcons]="['create','login','cached','work','folder','bar_chart']"></app-menu>
   <span class="page" id="page0">
     <span class="page-title"><span class="page-title-text">Registration</span></span>
     <app-post-create (postCreated)="onPostAdded($event)" class="app-post-create"></app-post-create>
@@ -21,9 +21,32 @@
     <app-jobs-list></app-jobs-list>
   </span>
   <span class="page" id="page4">
-    <span class="page-title" id="pageTitle"><span class="page-title-text" id="pageTitleText">Jobs</span></span>
+    <span class="page-title" id="pageTitle"><span class="page-title-text" id="pageTitleText">Users</span></span>
     <app-advanced-view *ngIf="screenWidth >= 1199"></app-advanced-view>
     <app-post-list [post]="posts" [isDemo]="true"></app-post-list>
     <br>
+  </span>
+  <span class="page" id="page5">
+      <span class="body-2">
+        <app-kpi-card [kpiTitle]=visName[visNum] [kpiScore]="kpiScores[visNum]"></app-kpi-card>
+        <div class="chart-container page" id="page0" style="visibility: visible" *ngIf="!isLoading">
+          <canvas id="baseChart" baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  [colors]="barChartColors">
+          </canvas>
+        </div>
+        <br>
+      </span>
+    <div class="chart-loading-container-div" *ngIf="isLoading">
+      <div class="chart-loading-container">
+      </div>
+    </div>
+    <div class="loading-container">
+      <app-loader *ngIf="isLoading"></app-loader>
+    </div>
   </span>
 </div>

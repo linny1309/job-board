@@ -66,6 +66,10 @@ export class PostCreateComponent implements OnInit {
   }
 
   onSavePost() {
+    if (this.form.invalid) {
+      alert("This form is not valid.");
+      return;
+    }
     console.log(this.post.id);
     this.isLoading = true;
     if(this.mode === 'create') {

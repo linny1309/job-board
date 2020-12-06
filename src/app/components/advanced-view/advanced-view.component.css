@@ -1,0 +1,41 @@
+@media only screen and (min-width: 1200px) {
+  .advanced-view {
+    position: fixed;
+    top: 75px;
+    width: 59%;
+    background-color: white;
+    border:2px solid rgb(211, 226, 255);
+    height: 90%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .advanced-view-container {
+    position: fixed;
+    top: 0;
+    left: 750px;
+    width: 100vw;
+    height: 100vh;
+    padding: 5px;
+  }
+
+  .feature-title {
+    color: darkblue;
+    font-weight: bold;
+    visibility: visible;
+  }
+
+  .feature-loader {
+    visibility: visible;
+  }
+}
+
+.feature-title {
+  visibility: hidden;
+}
+
+.feature-loader {
+  visibility: hidden;
+}
+

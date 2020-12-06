@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import { DemoComponent } from './demo/demo.component';
+import { DemoComponent } from './pages/demo/demo.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
-import { VisualsComponent } from './visuals/visuals.component';
-import { LogoComponent } from './logo/logo.component'
+import { VisualsComponent } from './pages/visuals/visuals.component';
+import { LogoComponent } from './components/logo/logo.component'
 
 const routes: Routes = [
   { path: '', component: DemoComponent},

@@ -4,6 +4,7 @@
   <span class="page" id="page1">
     <span class="page-title"><span class="page-title-text">Documents</span></span>
     <app-post-list [post]="posts" [isDemo]="false"></app-post-list>
+    <app-advanced-view *ngIf="screenWidth >= 1199"></app-advanced-view>
     <br>
   </span>
 </div>

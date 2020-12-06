@@ -3,8 +3,8 @@ import { ChartsModule } from 'ng2-charts';
 import { Subscription } from 'rxjs';
 import { Color, Label } from 'ng2-charts';
 
-import { Post } from '../posts/post.model'
-import { PostsService } from "../posts/post.service";
+import { Post } from '../../posts/post.model'
+import { PostsService } from "../../posts/post.service";
 
 @Component({
   selector: 'app-visuals',

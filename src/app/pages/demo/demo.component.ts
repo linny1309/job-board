@@ -1,12 +1,12 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Post } from '../../posts/post.model'
+import { Post } from './../../posts/post.model'
 
 @Component({
-  selector: 'app-documents',
-  templateUrl: './documents.component.html',
-  styleUrls: ['./documents.component.css']
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.css']
 })
-export class DocumentsComponent implements OnInit {
+export class DemoComponent implements OnInit {
 
   constructor() {
     this.getScreenSize();
@@ -29,6 +29,8 @@ export class DocumentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.getElementById("appLogo").style.marginLeft = "5px";
+    document.getElementById("appLogo").style.top = "50px";
   }
 
 }

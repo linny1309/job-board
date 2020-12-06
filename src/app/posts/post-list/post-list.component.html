@@ -5,7 +5,7 @@
   <span class="error-span" *ngIf="post.length == 0 && isDemo">The application is empty or not connected.</span>
   <div *ngIf="post.length > 0 && !isLoading">
         <div *ngFor="let post of post; index as i; first as isFirst" class="post-container">
-          <div>
+          <div class="user-list">
             <div class="accordion">
               <div class="post-image-div">
                  <img class="post-image" [src]="post.imagePath" [alt]="post.firstName">

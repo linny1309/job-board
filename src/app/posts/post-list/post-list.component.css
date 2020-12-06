@@ -27,7 +27,7 @@ app-loader {
   padding-top: 15px;
   padding-bottom: 15px;
   width: 605px;
-  border: none;
+  border:3px solid rgb(0, 51, 152);
   display: inline;
   text-align: left;
   outline: none;
@@ -103,12 +103,13 @@ a {
 }
 
 .post-image {
-  margin-top: -5px;
+  margin-top: -7px;
   width: 50px;
   height: 50px;
   border-radius: 10px;
   position: relative;
   display: inline;
+  border:3px solid rgb(0, 51, 152);
 }
 
 .full-name {
@@ -142,6 +143,7 @@ a {
 }
 
   .material-icons {
+    border:3px solid rgb(0, 51, 152);
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
        -khtml-user-select: none; /* Konqueror HTML */
@@ -367,5 +369,26 @@ a {
   .data-title {
     font-size: 15px;
   }
+}
+
+/*Min width*/
+
+@media only screen and (min-width: 1200px) {
+  .body {
+    display: block;
+  }
+
+  .user-list {
+    margin-left: 5%;
+  }
+
+  .post-list {
+    display: block;
+  }
+
+  .panel {
+    position: relative;
+  }
+
 }
 

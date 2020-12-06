@@ -16,13 +16,14 @@ import { EditComponent } from './pages/edit/edit.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
-import { SelectComponent } from './select/select.component';
-import { ChartjsFormComponent } from './chartjs-form/chartjs-form.component';
-import { DemoComponent } from './demo/demo.component';
+import { SelectComponent } from './components/select/select.component';
+import { ChartjsFormComponent } from './components/chartjs-form/chartjs-form.component';
+import { DemoComponent } from './pages/demo/demo.component';
 import { ChartsModule } from 'ng2-charts';
-import { VisualsComponent } from './visuals/visuals.component';
-import { KpiCardComponent } from './kpi-card/kpi-card.component';
-import { LogoComponent } from './logo/logo.component';
+import { VisualsComponent } from './pages/visuals/visuals.component';
+import { KpiCardComponent } from './components/kpi-card/kpi-card.component';
+import { LogoComponent } from './components/logo/logo.component';
+import { AdvancedViewComponent } from './components/advanced-view/advanced-view.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { LogoComponent } from './logo/logo.component';
     DemoComponent,
     VisualsComponent,
     KpiCardComponent,
-    LogoComponent
+    LogoComponent,
+    AdvancedViewComponent
   ],
   imports: [
     BrowserModule,

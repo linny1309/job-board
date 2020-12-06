@@ -31,15 +31,17 @@
         <span class="kpi-card-strip">
           <app-kpi-card [kpiTitle]=visName[visNum] [kpiScore]="kpiScores[visNum]"></app-kpi-card>
         </span>
-        <div class="chart-container page" id="page0" style="visibility: visible" *ngIf="!isLoading">
-          <canvas id="baseChart" baseChart
-                  [datasets]="barChartData"
-                  [labels]="barChartLabels"
-                  [options]="barChartOptions"
-                  [legend]="barChartLegend"
-                  [chartType]="barChartType"
-                  [colors]="barChartColors">
-          </canvas>
+        <div class="cjs-container">
+          <div class="chart-container page" id="page0" style="visibility: visible" *ngIf="!isLoading">
+            <canvas id="baseChart" baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    [colors]="barChartColors">
+            </canvas>
+          </div>
         </div>
         <br>
       </span>

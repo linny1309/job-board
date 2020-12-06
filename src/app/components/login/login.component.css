@@ -21,6 +21,7 @@
   color: lightgray;
   font-size: 20px;
   height: 50px;
+  box-shadow: 3px 1px 3px 3px #000000;
 }
 
 .post-create-title-header {

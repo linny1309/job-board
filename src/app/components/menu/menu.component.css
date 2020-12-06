@@ -9,14 +9,25 @@
   visibility: hidden;
   opacity: 0;
   transition: 0.2s;
-  border:3px solid rgb(0, 51, 152);
+  box-shadow: 3px 2px 3px 3.5px #2e2e2e;
   border-top: none;
   border-left: none;
-  border-bottom: none
+  border-bottom: none;
+  overflow: none;
 }
 
 .menu-list {
   margin-top: 70px;
+}
+
+.menu-item {
+  display: block;
+  margin-left: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: -27px;
 }
 
 .menu-item {
@@ -34,8 +45,24 @@
 }
 
 .menu-item-div {
-  background-color:rgb(45, 45, 255);
+  border-top:1px solid rgb(120, 148, 205);
+  height: fit-content;
   padding: 5px;
+}
+
+.menu-item-div:hover {
+  height: fit-content;
+  background-color: rgb(18, 18, 106);
+}
+
+.menu-item-div-spoof {
+  border-top:1px solid rgb(120, 148, 205);
+  height: fit-content;
+  padding: 5px;
+}
+
+.menu-item-spoof:hover {
+  height: fit-content;
 }
 
 .no-select {

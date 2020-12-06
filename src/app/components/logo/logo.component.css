@@ -4,6 +4,7 @@
 }
 
 .logo-container {
+  box-shadow: 3px 1px 3px 1.5px #989898;
   position: relative;
   width: 50px;
   height: 50px;

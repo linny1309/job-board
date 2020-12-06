@@ -24,6 +24,8 @@ export class PostCreateComponent implements OnInit {
   isLoading = false;
   imgPreview: string;
   pathEnd;
+  pageTitle = false;
+  pageTitleExists;
 
   @Output() postCreated = new EventEmitter<Post>();
 
@@ -137,6 +139,13 @@ export class PostCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.pageTitleExists = document.getElementById("pageTitle");
+    console.log(this.pageTitleExists);
+    if(typeof (this.pageTitleExists) != null) {
+      if(this.pageTitleExists == "Edit") {
+        document.getElementById("pageLogo").style.visibility = "hidden";
+      }
+    }
     this.form = new FormGroup({
       firstName: new FormControl(null,
         {validators: [Validators.required, Validators.minLength(2)] ,

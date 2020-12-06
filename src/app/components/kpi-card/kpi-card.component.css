@@ -23,6 +23,10 @@
   font-weight: bold;
 }
 
+.kpi-card {
+  width: 100%;
+}
+
 @media only screen and (max-width: 900px) {
   .kpi-title {
     font-size: 16px;

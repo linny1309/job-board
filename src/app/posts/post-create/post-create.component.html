@@ -1,7 +1,7 @@
 <div class="body">
   <app-loader *ngIf="isLoading"></app-loader>
   <div class="app-logo" id="appLogo">
-    <app-logo></app-logo>
+    <app-logo *ngIf="!pageTitle"></app-logo>
   </div>
   <form [formGroup]="form" class="post-create-div" *ngIf="!isLoading">
     <div class="post-create-header">

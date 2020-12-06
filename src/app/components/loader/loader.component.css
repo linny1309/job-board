@@ -4,6 +4,7 @@
   width: max-content;
   height: max-content;
   background-color: rgb(67, 93, 240);
+  box-shadow: 3px 1px 3px 3px #606060;
 }
 
 .loader {

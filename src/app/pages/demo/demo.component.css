@@ -43,22 +43,12 @@
   visibility: hidden;
 }
 
-.page-title {
-  position: absolute;
-  top: 65px;
-  width: 100%;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  color: darkblue;
-  left: 0;
-}
-
 .page-title-text {
   background-color: white;
   color: darkblue;
   padding: 8px;
   border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px #888888;
 }
 
 app-post-list {
@@ -129,27 +119,26 @@ app-post-list {
   overflow-x: none;
 }
 
-#pageTitle {
+#usersPageTitle {
   position: absolute;
   top: 65px;
   width: 100vw;
-  text-align: center;
   font-size: 20px;
   font-weight: bold;
   color: darkblue;
   left: 0;
 }
 
-#pageTitleText {
+#usersPageTitleText {
   background-color: white;
   color: darkblue;
   padding: 8px;
   border-radius: 10px;
-  border:2px solid rgb(211, 226, 255);
+  box-shadow: 3px 3px 3px 3px #888888;
 }
 
 @media only screen and (max-width: 900px) {
-  #pageTitle {
+  #usersPageTitle {
     position: absolute;
     top: 65px;
     text-align: center;
@@ -161,7 +150,7 @@ app-post-list {
 
 
 @media only screen and (max-width: 500px) {
-  #pageTitle {
+  #usersPageTitle {
     position: absolute;
     top: 65px;
     text-align: center;
@@ -172,37 +161,7 @@ app-post-list {
 
 }
 
-@media only screen and (min-width: 1200px) {
-  #pageTitle {
-      text-align: center;
-      font-size: 17px;
-      margin-left: 5%;
-      position: relative;
-      display: block;
-      background-color: white;
-      width: 605px;
-      height: 60px;
-      margin-top: 10px;
-      padding-top: 9px;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-radius: 10px;
-      border:2px solid rgb(211, 226, 255);
-  }
-
-  #pageTitleText {
-      position: relative;
-      margin-top: 50px;
-      background-color: white;
-      width: 615px;
-      height: 60px;
-      vertical-align: bottom;
-      border-width: 0px;
-  }
-
-}
-
-#pageTitle {
+#usersPageTitle {
   position: absolute;
   top: 65px;
   width: 100vw;
@@ -213,16 +172,15 @@ app-post-list {
   left: 0;
 }
 
-#pageTitleText {
+#usersPageTitleText {
   background-color: white;
   color: darkblue;
   padding: 8px;
   border-radius: 10px;
-  border:2px solid rgb(211, 226, 255);
 }
 
 @media only screen and (max-width: 900px) {
-  #pageTitle {
+  #usersPageTitle {
     position: absolute;
     top: 65px;
     text-align: center;
@@ -234,7 +192,7 @@ app-post-list {
 
 
 @media only screen and (max-width: 500px) {
-  #pageTitle {
+  #usersPageTitle {
     position: absolute;
     top: 65px;
     text-align: center;
@@ -246,31 +204,37 @@ app-post-list {
 }
 
 @media only screen and (min-width: 1200px) {
-  #pageTitle {
-      text-align: center;
+
+  #usersPageTitle {
       font-size: 17px;
-      margin-left: 4.75%;
+      margin-left: 3.05%;
       position: absolute;
-      display: block;
+      display: flex;;
       background-color: white;
-      width: 605px;
+      text-align: none;
+      width: 606px;
       height: 60px;
       margin-top: 10px;
       padding-top: 9px;
       padding-left: 10px;
       padding-right: 10px;
       border-radius: 10px;
-      border:2px solid rgb(211, 226, 255);
+      box-shadow: 3px 5px 3px 3px #888888;
   }
 
-  #pageTitleText {
+  #usersPageTitleText {
+      border: 1px solid rgb(0, 72, 255);
+      text-align: left;
       position: relative;
-      margin-top: 50px;
-      background-color: white;
-      width: 615px;
+      background-color: rgb(0, 0, 94);
+      color: white;
       height: 60px;
       vertical-align: bottom;
-      border-width: 0px;
+      font-size: 25px;
+      border-width: 1px;
+      margin-left: 5px;
+      box-shadow: 0px 0px 0px 0px #888888;
+      height: fit-content;
   }
 
   app-post-list {
@@ -281,12 +245,12 @@ app-post-list {
 }
 
 .body-2 {
+  width: 100%;
   position: absolute;
   top: 50px;
 }
 
 .body-2 {
-  width: 90%;
   overflow: hidden;
   height: 100%;
   border-radius: 10px; background-color: rgba(0, 0, 0, 0);
@@ -298,10 +262,9 @@ app-post-list {
 .chart-container {
   margin-top: 10px;
   position: absolute;
-  top: 150px;
-  width: 80%;
+  top: 130px;
+  width: 75%;
   border-radius: 10px;
-  height: 500px;
 }
 
 .chart-loading-container {
@@ -349,11 +312,21 @@ app-post-list {
 }
 
 app-kpi-card {
-  height: 100px;
-  width: 90%;
-  margin-top: 10px;
+  height: 100%;
+  width: 77%;
+  margin-top: 20px;
   background-color:rgb(0, 0, 133);
   border-radius: 10px;
+  box-shadow: 3px 1px 3px 3px #5e5e5e;
+}
+
+.kpi-card-strip {
+  overflow: none;
+  display: block;
+  width: 100%;
+  height: 105px;
+  display: flex;
+  justify-content: center;
 }
 
 

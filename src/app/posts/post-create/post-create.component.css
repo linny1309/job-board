@@ -18,7 +18,7 @@ app-loader {
   width: 615px;
   background-color: darkblue;
   border-radius: 5px;
-
+  box-shadow: 3px 2px 2px 1px #575757;
   margin-bottom: 10px;
   padding: 5px;
   color: lightgray;
@@ -30,7 +30,6 @@ app-loader {
   width: 615px;
   background-color: blue;
   border-radius: 5px;
-
   margin-bottom: 10px;
   padding: 5px;
   color: rgb(255, 0, 0);
@@ -67,7 +66,6 @@ app-loader {
 
 .post-create-textarea {
   background-color: rgb(80, 80, 80);
-
   resize: none;
   border-radius: 5px;
   border: none;
@@ -80,7 +78,6 @@ app-loader {
 
 .post-create-title {
   background-color: rgb(67, 93, 240);
-
   resize: none;
   border-radius: 5px;
   border: none;
@@ -88,6 +85,7 @@ app-loader {
   font-size: 20px;
   width: 605px;
   padding: 10px;
+  box-shadow: 3px 1px 3px 1.5px #989898;
   margin-bottom: 10px;
 }
 
@@ -197,6 +195,7 @@ button {
   text-align: center;
   padding: 10px;
   background-color: white;
+  box-shadow: 3px 1px 3px 1.5px #989898;
   margin-bottom: 5px;
 
 }

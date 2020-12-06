@@ -13,6 +13,10 @@
   left: 0;
 }
 
+.br {
+  height: 10px;
+}
+
 .page-title-text {
   background-color: white;
   color: darkblue;
@@ -49,7 +53,7 @@
   .page-title {
       text-align: center;
       font-size: 17px;
-      margin-left: 5%;
+      margin-left: 3%;
       position: relative;
       display: block;
       background-color: white;
@@ -71,6 +75,10 @@
       height: 60px;
       vertical-align: bottom;
       border-width: 0px;
+  }
+
+  .br {
+    height: 0px;
   }
 
 }

@@ -18,7 +18,7 @@ app-loader {
 }
 
 .accordion {
-  margin-top: 10px;
+  margin-top: 3px;
   height: 40px;
   background-color: #eee;
   color: rgb(255, 255, 255);
@@ -27,7 +27,7 @@ app-loader {
   padding-top: 15px;
   padding-bottom: 15px;
   width: 605px;
-  border:3px solid rgb(0, 51, 152);
+  box-shadow: 3px 2px 3px 3.5px #989898;
   display: inline;
   text-align: left;
   outline: none;
@@ -39,7 +39,6 @@ app-loader {
 }
 
 .panel {
-  border:3px solid rgb(34, 56, 222);
   margin-top: 10px;
   width: 605px;
   height: fit-content;
@@ -110,7 +109,7 @@ a {
   border-radius: 10px;
   position: relative;
   display: inline;
-  border:3px solid rgb(0, 51, 152);
+  border:1px solid rgb(0, 51, 152);
 }
 
 .full-name {
@@ -121,6 +120,7 @@ a {
   width: fit-content;
   padding: 5px;
   border-radius: 5px;
+  border:1px solid rgb(5, 16, 36);
 }
 
 .button-group {
@@ -144,7 +144,7 @@ a {
 }
 
   .material-icons {
-    border:3px solid rgb(0, 51, 152);
+    border:1px solid rgb(0, 51, 152);
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
        -khtml-user-select: none; /* Konqueror HTML */
@@ -160,23 +160,24 @@ a {
   width: 100%;
   text-align: left;
   padding: 5px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .category-title {
-  width: 100%;
-  background-color: rgb(0, 0, 114);
-  border-radius: 10px;
+  position: relative;
+  margin-left: -10px;
+  width: 105%;
+  background-color: rgb(32, 32, 191);
   text-align: center;
   display: block;
   padding-bottom: 5px;
   padding-top: 5px;
   font-weight: bold;
+  font-size: 15px;
 }
 
 @media only screen and (max-width: 900px) {
   .accordion {
-    margin-top: 10px;
     height: 40px;
     background-color: #eee;
     color: rgb(255, 255, 255);
@@ -263,6 +264,10 @@ a {
     border-radius: 10px;
     position: relative;
     display: inline;
+  }
+
+  .acc-icons {
+    margin-top: -15px;
   }
 
 }
@@ -398,7 +403,12 @@ a {
     height: 39px;
     border-radius: 10px;
     position: relative;
-}
+  }
+
+    .acc-icons {
+      margin-top: -15px;
+    }
+
 }
 
 /*Min width*/
@@ -409,7 +419,7 @@ a {
   }
 
   .user-list {
-    margin-left: 5%;
+    margin-left: 3%;
   }
 
   .post-list {
@@ -424,7 +434,7 @@ a {
     font-size: 16px;
     color: rgb(0, 0, 72);
     font-weight: bold;
-    margin-left: 5%;
+    margin-left: 3%;
     width: 605px;
     text-align: center;
   }

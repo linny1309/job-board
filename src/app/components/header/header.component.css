@@ -6,7 +6,7 @@
   z-index: 3;
   top: 0;
   left: 0;
-  border:3px solid rgb(0, 51, 152);
+  box-shadow: 3px 1px 3px 3px #000000;
   border-top: none;
   border-right: none;
   border-left: none;
@@ -33,6 +33,7 @@
   font-size: 20px;
   border-radius: 10px;
   font-weight: bold;
+  border:1px solid rgb(0, 21, 62);
 }
 
 .no-select {

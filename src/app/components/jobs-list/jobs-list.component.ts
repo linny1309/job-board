@@ -7,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobsListComponent implements OnInit {
 
-  onToggleAccordion() {
-    var acc : HTMLElement = document.getElementById("jobPanel");
+  jobs = ['BI Analyst','Front-End Dev','Backend Dev','Manager','FS Dev','Java Dev'];
+  department = ['Data','Software','Software','Management','Software','Software'];
+  level = ['Junior','Qualified','Qualified','Qualified','Expert','Junior'];
+  salary = [50000,60000,70000,70000,80000,60000];
+
+  onToggleAccordion(i) {
+    var acc : HTMLElement = document.getElementById("jobPanel"+i);
 
     if (acc.style.display == "block") {
       acc.style.display = "none";
-      document.getElementById("jobExpand").innerHTML = "expand_more";
+      document.getElementById("accJobIcon"+i).innerHTML = "expand_more";
     } else {
       acc.style.display = "block";
-      document.getElementById("jobExpand").innerHTML = "expand_less";
+      document.getElementById("accJobIcon"+i).innerHTML = "expand_less";
     }
   }
 

@@ -83,6 +83,7 @@ export class DemoComponent implements OnInit {
   }
 
   onChange(event) {
+    console.log(event.target.id);
     if(document.getElementById(event.target.id).id.substring(0,4) == "menu" && document.getElementById(event.target.id).id != "menuIcon") {
       if(document.getElementById(event.target.id).id == "menu5") {
         document.getElementById("baseChart").style.visibility = "visible";

@@ -23,6 +23,10 @@
   display: block;
 }
 
+.accordion:hover {
+  cursor: pointer;
+}
+
 .jobPanel {
   margin-top: 10px;
   width: 605px;
@@ -83,6 +87,21 @@ i {
 
 .material-icons:hover {
   color: rgb(177, 177, 177);
+}
+
+.job-feature-title {
+  display: block;
+  background-color: rgb(0, 0, 103);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 100%;
+  text-align: center;
+  margin-left: -5px;
+}
+
+.job-feature {
 }
 
 @media only screen and (max-width: 500px) {

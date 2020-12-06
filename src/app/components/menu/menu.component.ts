@@ -25,8 +25,10 @@ export class MenuComponent implements OnInit {
     for(x = 0; x < pages.length; x++) {
       if(n != x) {
         document.getElementById("page"+x).style.visibility = "hidden";
+        document.getElementById("page"+x).style.display = "none";
       } else {
         document.getElementById("page"+x).style.visibility = "visible";
+        document.getElementById("page"+x).style.display = "block";
         this.menuValue = x;
       }
     }

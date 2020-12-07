@@ -99,7 +99,6 @@ export class DemoComponent implements OnInit {
 
   ngOnInit(): void {
     document.getElementById("appLogo").style.marginLeft = "5px";
-    document.getElementById("appLogo").style.top = "50px";
     this.isLoading = true;
     this.postsService.getPosts();
     this.postsSub = this.postsService.getPostUpdateListener()

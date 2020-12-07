@@ -24,6 +24,8 @@ import { VisualsComponent } from './pages/visuals/visuals.component';
 import { KpiCardComponent } from './components/kpi-card/kpi-card.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { AdvancedViewComponent } from './components/advanced-view/advanced-view.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { AdvancedViewComponent } from './components/advanced-view/advanced-view.
     BrowserAnimationsModule,
     HttpClientModule,
     ChartsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]

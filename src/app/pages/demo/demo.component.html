@@ -24,7 +24,9 @@
     <app-jobs-list></app-jobs-list>
   </span>
   <span class="page" id="page4">
-    <span id="usersPageTitle"><span id="usersPageTitleText">Users</span></span>
+    <div class="user-title-div">
+      <span id="usersPageTitle"><span id="usersPageTitleText">Users</span></span>
+    </div>
     <app-advanced-view *ngIf="screenWidth >= 1199"></app-advanced-view>
     <app-post-list [post]="posts" [isDemo]="true"></app-post-list>
     <br>

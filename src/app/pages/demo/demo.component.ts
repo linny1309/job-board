@@ -79,11 +79,10 @@ export class DemoComponent implements OnInit {
   getScreenSize(event?) {
         this.screenHeight = window.innerHeight;
         this.screenWidth = window.innerWidth;
-        console.log(this.screenHeight, this.screenWidth);
   }
 
   onChange(event) {
-    console.log(event.target.id);
+    console.log(document.getElementById(event.target.id).id);
     if(document.getElementById(event.target.id).id.substring(0,4) == "menu" && document.getElementById(event.target.id).id != "menuIcon") {
       if(document.getElementById(event.target.id).id == "menu5") {
         document.getElementById("baseChart").style.visibility = "visible";

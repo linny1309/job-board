@@ -2,22 +2,25 @@
   <app-header [customHeader]="['Demo']"></app-header>
   <app-menu [customMenu]="['Registration','Login','Loader','Jobs','Documents','Visuals']" [customIcons]="['create','login','cached','work','folder','bar_chart']"></app-menu>
   <span class="page" id="page0">
-    <span class="page-title"><span class="page-title-text">Registration</span></span>
-    <app-post-create (postCreated)="onPostAdded($event)" class="app-post-create"></app-post-create>
+    <span class="page-title"><div class="title-panel"><span class="page-title-text">Registration</span></div></span>
+    <div class=post-create-container>
+      <app-post-create (postCreated)="onPostAdded($event)" class="app-post-create"></app-post-create>
+    </div>
     <br>
   </span>
   <span class="page" id="page1">
-    <span class="page-title"><span class="page-title-text">Login</span></span>
+    <span class="page-title"><div class="title-panel"><span class="page-title-text">Login</span></div></span>
+    <br>
     <app-login></app-login>
   </span>
   <span class="page" id="page2">
-    <span class="page-title"><span class="page-title-text">Loader</span></span>
+    <span class="page-title"><div class="title-panel"><span class="page-title-text">Loader</span></div></span>
     <div class="loader-container" id="appLoader">
       <app-loader class="loader-loader"></app-loader>
     </div>
   </span>
   <span class="page" id="page3">
-    <span class="page-title"><span class="page-title-text">Jobs</span></span>
+    <span class="page-title"><div class="title-panel"><span class="page-title-text">Jobs</span></div></span>
     <app-jobs-list></app-jobs-list>
   </span>
   <span class="page" id="page4">

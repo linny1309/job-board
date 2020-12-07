@@ -47,6 +47,7 @@
 }
 
 #shade {
+  pointer-events: none;
   transition: .5s;
   visibility: hidden;
   position: fixed;

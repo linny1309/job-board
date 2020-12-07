@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from "@angular/core";
+import { Component, EventEmitter, Output, OnInit, HostListener } from "@angular/core";
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
@@ -11,6 +11,7 @@ import { mimeType } from './mime-type.validator'
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
   styleUrls: ["./post-create.component.css"],
+  host: {'(document:click)': 'onChange($event)'},
   providers: [DatePipe],
 })
 
@@ -138,14 +139,12 @@ export class PostCreateComponent implements OnInit {
     this.form.reset();
   }
 
-  ngOnInit() {
-    this.pageTitleExists = document.getElementById("pageTitle");
-    console.log(this.pageTitleExists);
-    if(typeof (this.pageTitleExists) != null) {
-      if(this.pageTitleExists == "Edit") {
-        document.getElementById("pageLogo").style.visibility = "hidden";
-      }
+  onChange(event) {
+    if(event.target == "[object HTMLInputElement]") {
     }
+  }
+
+  ngOnInit() {
     this.form = new FormGroup({
       firstName: new FormControl(null,
         {validators: [Validators.required, Validators.minLength(2)] ,

@@ -7,13 +7,15 @@
     <div class="post-create-header">
       <div class="post-create-user">Complete your profile</div>
     </div>
+    <div class="post-create-button" type="button" (click)="filePicker.click()"><i class="material-icons" id="photoSpan">photo</i><span class="photo-span">Photo</span></div>
+    <br>
     <div class="post-create-header">
       <div class="personal-info">Enter your personal information</div>
     </div>
     <div class="label">Enter your first name</div>
-    <input type="text" rows="6" class="post-create-title" formControlName="firstName" placeholder="First name" required>
+    <input type="text" rows="6" class="post-create-title" formControlName="firstName" id="firtName" placeholder="First name" required>
     <br>
-    <div class="label">Enter your last name</div>
+    <div class="label" id="label">Enter your last name</div>
     <input type="text" rows="6" class="post-create-title" formControlName="lastName" placeholder="Last name" required>
     <br>
     <div class="label">Enter your date of birth</div>
@@ -67,10 +69,7 @@
     <br>
     <input type="submit" class="button" (click)="onSavePost()" class="post-create-button" value="Submit">
     <br>
-    <button class="post-create-button" type="button" (click)="filePicker.click()"><i class="material-icons">photo</i><span class="photo-span">Photo</span></button>
-    <br>
-    <input type="file" style="visibility:hidden" (change)="onImagePicked($event);" #filePicker>
-    <br>
+    <input type="file" style="visibility:hidden" (change)="onImagePicked($event);" #filePicker id="imagePicker">
     <div class="image-preview" *ngIf="imgPreview !== '' && imgPreview" id="imgPrev">
         <br>
         <div class="image-preview-container">

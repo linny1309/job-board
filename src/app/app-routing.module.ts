@@ -8,9 +8,11 @@ import { EditComponent } from './pages/edit/edit.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { VisualsComponent } from './pages/visuals/visuals.component';
 import { LogoComponent } from './components/logo/logo.component'
+import { PaginationComponent } from './components/pagination/pagination.component'
 
 const routes: Routes = [
   { path: '', component: DemoComponent},
+  { path:'pagination', component: PaginationComponent},
   { path: 'logo', component: LogoComponent},
   { path: 'registration', component: RegistrationComponent},
   { path: 'jobs', component: JobsComponent},

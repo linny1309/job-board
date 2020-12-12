@@ -1,7 +1,21 @@
 <div class="advanced-view-container">
   <div class="advanced-view">
     <div class="advanced-view-items">
-      <app-loader class="featue-loader" id="featureTitle"></app-loader>
+      <div class="adv-container">
+          <div class="title-panel">
+            <div class="adv-title">Documents</div>
+            <div class="user-count">
+              <i class="material-icons user-count-title">account_circle</i>
+              <div class="user-count-value">{{userCount}}</div>
+            </div>
+            <div class="profile-card-container">
+              <div class="profile-card">
+                <img [src]="post[0].imagePath" class="profile-image">
+                <div class="user-label">{{post[0].firstName + " " + post[0].lastName}}</div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>

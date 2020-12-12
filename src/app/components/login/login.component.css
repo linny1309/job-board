@@ -235,4 +235,124 @@ input:-webkit-autofill:active  {
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .post-create-div {
+    position: absolute;
+    top: 100px;
+  }
+
+  .post-create-header {
+    width: 415px;
+    background-color: darkblue;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    color: lightgray;
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .post-create-title-header {
+    width: 415px;
+    background-color: blue;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    color: lightgray;
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .post-create-user {
+    width: fit-content;
+    background-color: rgb(22, 22, 118);
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .post-create-title {
+    background-color: blue;
+    border-radius: 5px;
+    padding: 5px;
+    width: 415px;
+  }
+
+  .personal-info {
+    background-color: rgb(22, 22, 118);
+    border-radius: 5px;
+    padding: 5px;
+    width: 415px;
+  }
+
+  .post-create-textarea {
+    background-color: rgb(80, 80, 80);
+    resize: none;
+    border-radius: 5px;
+    border: none;
+    color: rgb(85, 85, 85);
+    font-size: 20px;
+    width: 405px;
+    height: 150px;
+    padding: 10px;
+  }
+
+  .post-create-title {
+    background-color: rgb(67, 93, 240);
+    resize: none;
+    border-radius: 5px;
+    border: none;
+    color:   rgb(255, 255, 255);
+    font-size: 20px;
+    width: 405px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  ::placeholder {
+    color:   rgb(255, 255, 255);
+    opacity: 1;
+  }
+
+  .post-create-textarea:focus{
+    border: 0 none #FFF;
+    overflow: hidden;
+    outline: none;
+  }
+
+  .post-create-button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(22, 22, 118);
+    font-size: 20px;
+    font-weight: bold;
+    color: lightgray;
+    padding: 10px;
+    display: block;
+  }
+
+  .post-create-button:hover {
+    cursor: pointer;
+  }
+
+  /* Change the white to any color ;) */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active  {
+      background-color: rgb(67, 93, 240) !important;
+      color: white;
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #fff !important;
+  }
+}
+
+
+
+
 

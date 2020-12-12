@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Post } from './post.model';
+import { stringify } from 'querystring';
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
@@ -17,8 +18,20 @@ export class PostsService {
     this.router.navigate(url);
   }
 
-  //Getting posts from backend API to be sent to the front-end
+  //Getting post count
+  getPostCount() {
+    var posts: Post
+    var count;
+    this.http.get<{message: string, posts: any}>(
+      'http://localhost:3000/api/posts'
+    ).subscribe(post => {
+      //onsole.log("post"+JSON.stringify(post));
+      //console.log(JSON.parse(JSON.stringify(post)));
+      console.log("Post count " + post.posts.length);
+    })
+  }
 
+  //Getting posts from backend API to be sent to the front-end
   getPosts() {
     this.http.get<{message: string, posts: any}>(
       'http://localhost:3000/api/posts'

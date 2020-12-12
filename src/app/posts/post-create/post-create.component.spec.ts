@@ -1,25 +1,32 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, FormGroup, FormControl, Validators } from '@angular/forms'
+import { DebugElement } from '@angular/core';
+import { BrowserModule, By } from '@angular/platform-browser'
 
 import { PostCreateComponent } from './post-create.component';
 
 describe('PostCreateComponent', () => {
   let component: PostCreateComponent;
   let fixture: ComponentFixture<PostCreateComponent>;
+  let de: DebugElement
+  let el: HTMLElement
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostCreateComponent ]
-    })
-    .compileComponents();
-  });
+      declarations: [ PostCreateComponent ],
+      imports: [
+        FormsModule,
+        FormGroup
+      ]
+    },)
+    .compileComponents().then(() => {
+      fixture = TestBed.createComponent(PostCreateComponent);
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PostCreateComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+      component = fixture.componentInstance;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+      de = fixture.debugElement.query(By.css('form'));
+      el = de.nativeElement;
+
+    });
   });
 });

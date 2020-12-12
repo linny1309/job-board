@@ -213,6 +213,7 @@ getGenerationMode(arr: number[]) {{
   }
 
   ngOnInit() {
+    this.post = [];
     this.isLoading = true;
     this.postsService.getPosts();
     this.postsSub = this.postsService.getPostUpdateListener()

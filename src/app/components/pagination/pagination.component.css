@@ -1,0 +1,80 @@
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+div {
+  display: block;
+  height: 37px;
+  overflow: hidden;
+  z-index: 5;
+  width: fit-content;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+.center {
+  justify-content: center;;
+  text-align: center;
+  overflow: none;
+  height:45px;
+  z-index: 5;
+  background-color: #001774;
+  box-shadow: 3px 1px 3px 1.5px #989898;
+}
+
+.pagination {
+  display: inline-block;
+  overflow: none;
+  padding: 5px;
+  height: 80px;
+}
+
+.page-input {
+  margin-top: -5px;
+  width: 50px;
+  height: 20px;
+  overflow: hidden;
+  box-shadow: 3px 1px 3px 1.5px #464646;
+  border-radius: 5px;
+  border: none;
+}
+
+.pagination div {
+  border-radius: 5px;
+  padding: 10px;
+  overflow: none;
+  color: white;
+  float: left;
+  padding: 3px 3px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  margin: 0 4px;
+  background-color: #001774;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.disable-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .words {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .words {
+    display: none;
+  }
+}
+
+

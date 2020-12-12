@@ -26,6 +26,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { AdvancedViewComponent } from './components/advanced-view/advanced-view.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { environment } from '../environments/environment';
     VisualsComponent,
     KpiCardComponent,
     LogoComponent,
-    AdvancedViewComponent
+    AdvancedViewComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

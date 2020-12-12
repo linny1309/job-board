@@ -118,6 +118,18 @@ router.get("/:id", (req, res, next) => {
   })
 });
 
+//Getting number of documents in the database
+
+router.get("/post/count", (req, res) => {
+  Post.count().then(count => {
+    if(count) {
+      res.status(200).json(count);
+    } else {
+      res.send(404).json({message: 'Post not found'});
+    };
+  })
+})
+
 //Deleting a post from the backend
 
 router.delete("/:id", (req, res, next) => {

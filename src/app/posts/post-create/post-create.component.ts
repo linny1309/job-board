@@ -59,8 +59,6 @@ export class PostCreateComponent implements OnInit {
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({image: file});
     this.form.get('image').updateValueAndValidity();
-    console.log(file);
-    console.log(this.form);
     const reader = new FileReader();
     reader.onload = () => {
       this.imgPreview = reader.result as string;
@@ -73,7 +71,6 @@ export class PostCreateComponent implements OnInit {
       alert("This form is not valid.");
       return;
     }
-    console.log(this.post.id);
     this.isLoading = true;
     if(this.mode === 'create') {
       const post: Post = {
@@ -140,8 +137,6 @@ export class PostCreateComponent implements OnInit {
   }
 
   onChange(event) {
-    if(event.target == "[object HTMLInputElement]") {
-    }
   }
 
   ngOnInit() {
@@ -201,7 +196,6 @@ export class PostCreateComponent implements OnInit {
         this.postId = paramMap.get('postId');
         this.isLoading = true;
         document.getElementById("appLogo").style.visibility = "hidden";
-        console.log(this.postId);
         this.postsService.getPost(this.postId).subscribe(postData => {
           this.isLoading = false;
           document.getElementById("appLogo").style.visibility = "visible";

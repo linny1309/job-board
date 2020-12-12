@@ -3,7 +3,6 @@
   justify-content: center;
   width: 100%;
   height: 100vh;
-  z-index: 2;
 }
 
 .post-create-div {
@@ -54,6 +53,7 @@ app-loader {
 
 .post-create-title-date {
   text-transform: uppercase;
+  z-index: 30;
 }
 
 .personal-info {

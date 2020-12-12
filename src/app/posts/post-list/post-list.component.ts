@@ -21,6 +21,7 @@ export class PostListComponent {
   jobStart: string[] = [];
   jobEnd: string[] = [];
   isLoading = false;
+  userCount: number;
 
   onToggleAccordion(i) {
     var acc : HTMLElement = document.getElementById("panel"+i);
@@ -54,13 +55,16 @@ export class PostListComponent {
   }
 
   ngOnInit() {
+    this.userCount = 0;
     this.isLoading = true;
     this.postsService.getPosts();
     this.postsSub = this.postsService.getPostUpdateListener()
       .subscribe((posts: Post[]) => {
+        this.userCount = 0;
         this.isLoading = false;
         this.post = posts;
         this.post.forEach((post, i) => {
+          this.userCount++;
           this.formatDate(this.post[i].dob, "dob");
           this.formatDate(this.post[i].gradYear, "gradYear");
           this.formatDate(this.post[i].jobStart, "jobStart");

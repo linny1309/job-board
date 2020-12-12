@@ -1,0 +1,18 @@
+<div class="center">
+  <div class="pagination">
+    <div class="words">Items per page</div>
+    <div><input type=number class="page-input" id="pageInput" (change)="changePagination(perInput.value)" #perInput value=1 min=1></div>
+    <div class="words">Showing</div>
+    <div>{{currentPosition}}</div>
+    <div>-</div>
+    <div>{{sectionPosition}}</div>
+    <div>/</div>
+    <div>{{postCount}}</div>
+    <div class="disable-select" (click)="changePageDown(perInput.value)">&laquo;</div>
+    <div class="disable-select" (click)="changePageUp(perInput.value)">&raquo;</div>
+    <br>
+  </div>
+  <br>
+</div>
+<br>
+

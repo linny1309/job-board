@@ -82,7 +82,7 @@ export class DemoComponent implements OnInit {
   }
 
   onChange(event) {
-    console.log(document.getElementById(event.target.id).id);
+    if(event.target.id != "")
     if(document.getElementById(event.target.id).id.substring(0,4) == "menu" && document.getElementById(event.target.id).id != "menuIcon") {
       if(document.getElementById(event.target.id).id == "menu5") {
         document.getElementById("baseChart").style.visibility = "visible";
@@ -98,6 +98,7 @@ export class DemoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.post = [];
     document.getElementById("appLogo").style.marginLeft = "5px";
     this.isLoading = true;
     this.postsService.getPosts();

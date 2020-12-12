@@ -19,7 +19,6 @@ export class MenuComponent implements OnInit {
   menuValue: number;
 
   togglePage(n) {
-    console.log(n);
     var x;
     var pages: HTMLCollectionOf<Element> = document.getElementsByClassName("page");
     for(x = 0; x < pages.length; x++) {

@@ -23,7 +23,7 @@ export class PostsService {
     var posts: Post
     var count;
     this.http.get<{message: string, posts: any}>(
-      'http://localhost:3000/api/posts'
+      'http://localhost:3300/api/posts'
     ).subscribe(post => {
       //onsole.log("post"+JSON.stringify(post));
       //console.log(JSON.parse(JSON.stringify(post)));
@@ -34,7 +34,7 @@ export class PostsService {
   //Getting posts from backend API to be sent to the front-end
   getPosts() {
     this.http.get<{message: string, posts: any}>(
-      'http://localhost:3000/api/posts'
+      'http://localhost:3300/api/posts'
       )
       .pipe(map((postData) => {
         return postData.posts.map(post => {
@@ -93,7 +93,7 @@ export class PostsService {
       jobStart: Date,
       jobEnd: Date,
       imagePath: string
-    }>('http://localhost:3000/api/posts/' + id);
+    }>('http://localhost:3300/api/posts/' + id);
   }
 
   //For adding a new post
@@ -138,7 +138,7 @@ export class PostsService {
     postData.append("jobEnd", jobEndStr);
     postData.append("image", image, firstName+" "+lastName);
     this.http
-    .post<{message: string, post: Post}>('http://localhost:3000/api/posts', postData)
+    .post<{message: string, post: Post}>('http://localhost:3300/api/posts', postData)
     .subscribe((responseData) => {
       const post: Post = {
         id: responseData.post.id,
@@ -216,7 +216,7 @@ export class PostsService {
       }
     }
     this.http
-      .put("http://localhost:3000/api/posts/" + id, postData)
+      .put("http://localhost:3300/api/posts/" + id, postData)
       .subscribe(response => {
         console.log("RESPONSE"+JSON.stringify(response));
         const updatedPosts = [...this.posts];
@@ -251,7 +251,7 @@ export class PostsService {
   //For deleting an existing post
 
   deletePost(postId: string) {
-    this.http.delete("http://localhost:3000/api/posts/" + postId)
+    this.http.delete("http://localhost:3300/api/posts/" + postId)
       .subscribe(() => {
         const updatedPosts = this.posts.filter(post => post.id !== postId);
         this.posts = updatedPosts;

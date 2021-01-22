@@ -202,6 +202,7 @@ getGenerationMode(arr: number[]) {{
   }
 
   checkPosts(posts: Post[]) {
+    this.kpiScores = [];
     var n = 0;
     for(n = 0; n < posts.length; n++) {
       this.dobSet.push(posts[n].dob.toString());

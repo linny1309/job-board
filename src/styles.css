@@ -5,7 +5,6 @@
 }
 
 html {
-  overflow: auto;
   overflow-x: hidden;
   scrollbar-width: none;
 }
@@ -39,4 +38,12 @@ body {
   scrollbar-width: 0px;
   background-color: rgb(194, 211, 255);
   overflow-y: auto;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px rgb(82, 87, 218) inset !important;
 }

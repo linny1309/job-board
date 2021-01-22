@@ -1,3 +1,5 @@
+/*
+
 const {app, BrowserWindow} = require('electron')
 const url = require("url");
 const path = require("path");
@@ -37,3 +39,5 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
   if (mainWindow === null) createWindow()
 })
+
+*/

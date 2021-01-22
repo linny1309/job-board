@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './components/menu/menu.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { JobsListComponent } from './components/jobs-list/jobs-list.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
+import { LoginComponentPage } from './pages/login/login.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { LoaderComponent } from './components/loader/loader.component';
@@ -27,6 +28,7 @@ import { AdvancedViewComponent } from './components/advanced-view/advanced-view.
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     KpiCardComponent,
     LogoComponent,
     AdvancedViewComponent,
-    PaginationComponent
+    PaginationComponent,
+    SignupComponent,
+    LoginComponentPage
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     BrowserAnimationsModule,
     HttpClientModule,
     ChartsModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],

@@ -7,7 +7,7 @@
     <div class="post-create-header">
       <div class="post-create-user">Complete your profile</div>
     </div>
-    <div class="post-create-button" type="button" (click)="filePicker.click()"><i class="material-icons" id="photoSpan">photo</i><span class="photo-span">Photo</span></div>
+    <div class="post-create-button" type="button" (click)="filePicker.click()" id="imageButton"><i class="material-icons" id="photoSpan">photo</i><span class="photo-span">Photo</span></div>
     <br>
     <div class="post-create-header">
       <div class="personal-info">Enter your personal information</div>
@@ -67,7 +67,7 @@
     <input type="date" rows="6" class="post-create-title-date post-create-title" formControlName="jobEnd" placeholder="Enter year ended" required>
     <br>
     <br>
-    <input type="submit" class="button" (click)="onSavePost()" class="post-create-button" value="Submit">
+    <input type="submit" class="button" (click)="onSavePost()" class="post-create-button" value="Submit" id="submitRegistration">
     <br>
     <input type="file" style="visibility:hidden" (change)="onImagePicked($event);" #filePicker id="imagePicker">
     <div class="image-preview" *ngIf="imgPreview !== '' && imgPreview" id="imgPrev">

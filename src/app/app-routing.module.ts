@@ -9,6 +9,7 @@ import { JobsComponent } from './pages/jobs/jobs.component';
 import { VisualsComponent } from './pages/visuals/visuals.component';
 import { LogoComponent } from './components/logo/logo.component'
 import { PaginationComponent } from './components/pagination/pagination.component'
+import { LoginComponentPage } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', component: DemoComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'documents', component: DocumentsComponent},
   { path: 'edit/:postId', component: EditComponent},
   { path: 'visuals', component: VisualsComponent},
+  { path: 'login', component: LoginComponentPage},
 ];
 
 @NgModule({

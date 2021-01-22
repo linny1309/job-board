@@ -29,26 +29,48 @@ const storage = multer.diskStorage({
 
 router.post("", multer({storage: storage}).single("image"), (req, res, next) => {
   const url = req.protocol + '://' + req.get("host");
-  const post = new Post({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    dob: req.body.dob,
-    state: req.body.state,
-    city: req.body.city,
-    zip: req.body.zip,
-    institution: req.body.institution,
-    degree: req.body.degree,
-    gradYear: req.body.gradYear,
-    major: req.body.major,
-    minor: req.body.minor,
-    org: req.body.org,
-    position: req.body.position,
-    jobStart: req.body.jobStart,
-    jobEnd: req.body.jobEnd,
-    imagePath: url + "/images/" + req.file.filename
-  });
-  console.log(post.imagePath);
+  var post;
+  if(req.file && req.file.imageP !== "") {
+    console.log("dwdsadsadsadsadsadsadsadasdsadasdasdsadsadadsadsadsadsa");
+    post = new Post({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      dob: req.body.dob,
+      state: req.body.state,
+      city: req.body.city,
+      zip: req.body.zip,
+      institution: req.body.institution,
+      degree: req.body.degree,
+      gradYear: req.body.gradYear,
+      major: req.body.major,
+      minor: req.body.minor,
+      org: req.body.org,
+      position: req.body.position,
+      jobStart: req.body.jobStart,
+      jobEnd: req.body.jobEnd,
+      imagePath: url + "/images/" + req.file.filename
+    })} else {
+      post = new Post({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        dob: req.body.dob,
+        state: req.body.state,
+        city: req.body.city,
+        zip: req.body.zip,
+        institution: req.body.institution,
+        degree: req.body.degree,
+        gradYear: req.body.gradYear,
+        major: req.body.major,
+        minor: req.body.minor,
+        org: req.body.org,
+        position: req.body.position,
+        jobStart: req.body.jobStart,
+        jobEnd: req.body.jobEnd,
+        imagePath: "http://localhost:3300/images/carter-madden-1608098174012.png"
+      });
+    }
   post.save().then(result => {
+    console.log(result);
     res.status(201).json({
       message: 'Post added successfully',
       post: {
@@ -56,6 +78,7 @@ router.post("", multer({storage: storage}).single("image"), (req, res, next) => 
         id: result._id
       }
     })
+    console.log("Post added successfully")
   });
 });
 
@@ -66,7 +89,6 @@ router.put("/:id", multer({storage: storage}).single("image"), (req, res, next) 
   if(req.file) {
     const url = req.protocol + "://" + req.get("host");
     imagePath = url + "/images/" + req.file.filename;
-    console.log(imagePath);
   }
   const post = new Post({
     _id: req.body.id,

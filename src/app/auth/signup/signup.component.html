@@ -1,0 +1,16 @@
+<div class="body">
+  <app-loader *ngIf="isLoading"></app-loader>
+  <div class="post-create-div">
+    <div class="post-create-header">
+      <div class="post-create-user">Signup</div>
+    </div>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+      <input type="email" rows="6" class="post-create-title" placeholder="Enter your email" required #emailInput="ngModel" name="email" ngModel required email>
+      <br>
+      <input type="password" rows="6" class="post-create-title" placeholder="Enter your password" required #passwordInput="ngModel" name="password" ngModel required>
+      <br>
+      <br>
+      <input type="submit" class="post-create-button" value="Login">
+    </form>
+  </div>
+</div>
